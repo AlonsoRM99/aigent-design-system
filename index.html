@@ -1,223 +1,220 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aigent Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
-
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --brand:#0066FF;--brand-dark:#0254D2;--brand-900:#0041A4;
+  --blue:#0066FF;--blue-d:#0254D2;--blue-900:#0041A4;
   --sec:#574FBF;--ter:#2FB88A;
-  --neutral-50:#F9F9F9;--neutral-100:#F4F6FA;--neutral-200:#F2F2F2;
-  --neutral-300:#E3E3E3;--neutral-400:#CBCBCB;--neutral-600:#9E9E9E;
-  --neutral-700:#787878;--neutral-800:#535353;--neutral-900:#202944;
-  --err:#E10412;--warn:#FADC63;--suc:#06B95E;
-  --radius:8px;--radius-lg:12px;
+  --n50:#F9F9F9;--n100:#F4F6FA;--n200:#F2F2F2;--n300:#E3E3E3;
+  --n400:#CBCBCB;--n600:#9E9E9E;--n700:#787878;--n800:#535353;--n900:#202944;
+  --err:#E10412;--suc:#06B95E;
+  --r:8px;--rl:12px;
   --ff:'DM Sans',sans-serif;--fm:'DM Mono',monospace;
 }
-body{font-family:var(--ff);color:var(--neutral-900);background:transparent;line-height:1.6;font-size:14px}
-.layout{display:flex;gap:0;min-height:600px}
-.sidebar{width:200px;flex-shrink:0;border-right:1px solid var(--neutral-300);padding:1rem 0;position:sticky;top:0;align-self:flex-start;background:var(--neutral-50)}
-.sidebar-logo{padding:0 1rem 1rem;border-bottom:1px solid var(--neutral-300);margin-bottom:0.75rem}
-.sidebar-logo .brand{font-size:16px;font-weight:600;color:var(--neutral-900);letter-spacing:-0.5px}
-.sidebar-logo .sub{font-size:10px;color:var(--neutral-600);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
-.nav-section{padding:0.5rem 1rem 0.25rem;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--neutral-600)}
-.nav-item{display:block;padding:5px 1rem;font-size:13px;color:var(--neutral-700);cursor:pointer;border-left:2px solid transparent;transition:all 0.15s;text-decoration:none}
-.nav-item:hover{color:var(--brand);background:var(--neutral-100)}
-.nav-item.active{color:var(--brand);border-left-color:var(--brand);background:var(--neutral-100);font-weight:500}
-.content{flex:1;padding:2rem;min-width:0;overflow:hidden}
+html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;line-height:1.6;font-size:14px}
+.layout{display:flex;min-height:100vh}
+
+/* Sidebar */
+.sidebar{width:200px;flex-shrink:0;border-right:1px solid var(--n300);background:var(--n50);position:sticky;top:0;height:100vh;overflow-y:auto}
+.logo{padding:1.25rem 1rem 1rem;border-bottom:1px solid var(--n300);margin-bottom:0.5rem}
+.logo-name{font-size:16px;font-weight:600;color:var(--n900);letter-spacing:-0.3px}
+.logo-name span{color:var(--blue)}
+.logo-sub{font-size:10px;color:var(--n600);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.nav-section{padding:0.75rem 1rem 0.2rem;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--n600)}
+.nav-item{display:block;padding:5px 1rem;font-size:13px;color:var(--n700);cursor:pointer;border-left:2px solid transparent;transition:all 0.12s;text-decoration:none}
+.nav-item:hover{color:var(--blue);background:var(--n200)}
+.nav-item.active{color:var(--blue);border-left-color:var(--blue);background:var(--n100);font-weight:500}
+
+/* Content */
+.content{flex:1;padding:2.5rem;max-width:900px;min-width:0}
 .page{display:none}.page.active{display:block}
-.page-title{font-size:22px;font-weight:600;color:var(--neutral-900);margin-bottom:4px;letter-spacing:-0.5px}
-.page-desc{font-size:14px;color:var(--neutral-600);margin-bottom:2rem;line-height:1.6}
-.section-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--neutral-600);margin:2rem 0 1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--neutral-300)}
-.token-badge{font-family:var(--fm);font-size:11px;background:var(--neutral-100);border:1px solid var(--neutral-300);border-radius:4px;padding:2px 6px;color:var(--neutral-800)}
+.page-title{font-size:24px;font-weight:600;color:var(--n900);margin-bottom:6px;letter-spacing:-0.5px}
+.page-desc{font-size:13px;color:var(--n700);margin-bottom:2rem;line-height:1.7;max-width:600px}
+.sec{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--n600);margin:2rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--n300)}
+
+/* Utilities */
+.tok{font-family:var(--fm);font-size:11px;background:var(--n100);border:1px solid var(--n300);border-radius:4px;padding:2px 6px;color:var(--n800);white-space:nowrap}
+.callout{background:#EEF4FF;border:1px solid #B5D4F4;border-radius:var(--rl);padding:1rem 1.25rem;margin:1.5rem 0;font-size:13px;color:#0C447C;line-height:1.6}
+.callout strong{font-weight:600}
+.cw{background:#FFF9E6;border-color:#FAC775;color:#633806}
+.demo{background:var(--n100);border:1px solid var(--n300);border-radius:var(--rl);padding:1.25rem;margin:0.75rem 0;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.demo-lbl{font-size:10px;color:var(--n600);width:100%;margin-bottom:2px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem}
+.comp-card{background:white;border:1px solid var(--n300);border-radius:var(--rl);padding:1.25rem;transition:border-color 0.15s}
+.comp-card:hover{border-color:var(--blue)}
+.comp-name{font-size:13px;font-weight:600;color:var(--n900);margin-bottom:4px}
+.comp-desc{font-size:12px;color:var(--n600);line-height:1.5}
 
 /* Color swatches */
-.color-row{margin-bottom:1.5rem}
-.color-label{font-size:12px;font-weight:600;color:var(--neutral-800);margin-bottom:8px;text-transform:capitalize}
-.swatches{display:flex;gap:4px;flex-wrap:wrap}
-.swatch{border-radius:var(--radius);overflow:hidden;width:68px;flex-shrink:0}
-.swatch-color{height:44px;width:100%}
-.swatch-info{padding:4px;background:white;border:1px solid var(--neutral-200);border-top:none;border-radius:0 0 4px 4px}
-.swatch-step{font-size:9px;color:var(--neutral-600);font-family:var(--fm)}
-.swatch-hex{font-size:9px;color:var(--neutral-800);font-family:var(--fm)}
+.swatches{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
+.swatch{border-radius:var(--r);overflow:hidden;width:70px;flex-shrink:0;border:1px solid rgba(0,0,0,0.06)}
+.sw-c{height:44px;width:100%}
+.sw-i{padding:4px 5px;background:white}
+.sw-s{font-size:9px;color:var(--n600);font-family:var(--fm)}
+.sw-h{font-size:9px;color:var(--n800);font-family:var(--fm)}
 
 /* Type scale */
-.type-row{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--neutral-200)}
+.type-row{display:flex;align-items:center;gap:1rem;padding:0.875rem 0;border-bottom:1px solid var(--n200)}
 .type-meta{width:140px;flex-shrink:0}
-.type-label{font-size:11px;font-weight:600;color:var(--neutral-600);text-transform:uppercase;letter-spacing:0.5px}
-.type-tokens{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
-.type-example{flex:1;min-width:0}
+.type-lbl{font-size:10px;font-weight:600;color:var(--n600);text-transform:uppercase;letter-spacing:0.5px}
+.type-toks{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.type-ex{flex:1;min-width:0}
 
-/* Grid vis */
-.grid-card{background:var(--neutral-100);border:1px solid var(--neutral-300);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1rem}
-.grid-label{font-size:12px;font-weight:600;color:var(--neutral-800);margin-bottom:0.75rem}
-.grid-spec{font-size:12px;color:var(--neutral-600);margin-bottom:0.75rem;line-height:1.8}
-.grid-vis{display:flex;gap:4px;height:40px}
-.grid-col{background:rgba(0,102,255,0.12);border:1px solid rgba(0,102,255,0.3);border-radius:3px;flex:1}
+/* Grid */
+.grid-card{background:var(--n100);border:1px solid var(--n300);border-radius:var(--rl);padding:1.25rem;margin-bottom:0.75rem}
+.grid-lbl{font-size:13px;font-weight:600;color:var(--n800);margin-bottom:4px}
+.grid-spec{font-size:12px;color:var(--n600);margin-bottom:0.75rem;line-height:1.8}
+.grid-vis{display:flex;gap:4px;height:32px}
+.gc{background:rgba(0,102,255,0.1);border:1px solid rgba(0,102,255,0.2);border-radius:3px;flex:1}
 
-/* Component cards */
-.comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
-.comp-card{background:white;border:1px solid var(--neutral-300);border-radius:var(--radius-lg);padding:1.25rem;transition:border-color 0.15s}
-.comp-card:hover{border-color:var(--brand)}
-.comp-name{font-size:13px;font-weight:600;color:var(--neutral-900);margin-bottom:4px}
-.comp-ver{font-family:var(--fm);font-size:10px;color:var(--neutral-600);margin-bottom:8px}
-.comp-states{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px}
-.state-tag{font-size:10px;padding:2px 6px;border-radius:4px;background:var(--neutral-100);border:1px solid var(--neutral-300);color:var(--neutral-700)}
-.comp-desc{font-size:12px;color:var(--neutral-600);line-height:1.5}
+/* Icon grid */
+.icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px}
+.icon-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px;background:var(--n100);border-radius:var(--r);border:1px solid var(--n200)}
+.icon-item svg{width:22px;height:22px;color:var(--n900)}
+.icon-nm{font-size:10px;color:var(--n600);text-align:center;line-height:1.3;font-family:var(--fm)}
 
-/* Component demos */
-.demo-block{background:var(--neutral-100);border:1px solid var(--neutral-300);border-radius:var(--radius-lg);padding:1.5rem;margin:0.75rem 0;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.demo-label{font-size:11px;color:var(--neutral-600);width:100%;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600}
+/* Shadows */
+.sh-wrap{display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.5rem 0}
+.sh-card{background:white;border-radius:var(--rl);padding:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.sh-box{width:110px;height:80px;border-radius:var(--r);background:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--fm);color:var(--n700);text-align:center}
+.sh-lbl{font-size:11px;color:var(--n600);text-align:center}
+.s0{box-shadow:0 1px 3px rgba(0,0,0,0.12),0 0 0 1px rgba(0,0,0,0.04)}
+.s1{box-shadow:0 4px 8px rgba(0,0,0,0.10),0 1px 3px rgba(0,0,0,0.06)}
+.s2{box-shadow:0 10px 20px rgba(0,0,0,0.10),0 4px 6px rgba(0,0,0,0.06)}
+.s3{box-shadow:0 20px 30px rgba(0,0,0,0.10),0 8px 12px rgba(0,0,0,0.06)}
+.s4{box-shadow:0 30px 60px rgba(0,0,0,0.14),0 10px 20px rgba(0,0,0,0.08)}
 
-/* Buttons demo */
-.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:var(--radius);font-size:13px;font-weight:500;cursor:pointer;border:1px solid transparent;font-family:var(--ff);transition:all 0.15s}
-.btn-primary{background:var(--brand);color:white;border-color:var(--brand)}
-.btn-secondary{background:white;color:var(--brand);border-color:var(--brand)}
-.btn-ghost{background:transparent;color:var(--neutral-700);border-color:var(--neutral-300)}
-.btn-danger{background:var(--err);color:white;border-color:var(--err)}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:var(--r);font-size:13px;font-weight:500;cursor:pointer;border:1px solid transparent;font-family:var(--ff);transition:all 0.15s;line-height:1}
+.btn-p{background:var(--blue);color:white;border-color:var(--blue)}.btn-p:hover{background:var(--blue-d)}
+.btn-s{background:white;color:var(--blue);border-color:var(--blue)}.btn-s:hover{background:#EEF4FF}
+.btn-g{background:transparent;color:var(--n700);border-color:var(--n300)}.btn-g:hover{background:var(--n200)}
+.btn-d{background:var(--err);color:white;border-color:var(--err)}
 .btn-sm{padding:4px 10px;font-size:12px}
-.btn-lg{padding:10px 20px;font-size:15px}
-.btn-disabled{opacity:0.4;cursor:not-allowed}
+.btn-lg{padding:10px 22px;font-size:15px}
+.btn:disabled{opacity:0.4;cursor:not-allowed}
 
-/* Form demos */
-.input-demo{padding:7px 10px;border:1px solid var(--neutral-300);border-radius:var(--radius);font-size:13px;background:white;font-family:var(--ff);color:var(--neutral-900);outline:none;width:160px}
-.input-demo:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(0,102,255,0.1)}
-.input-error{border-color:var(--err)}
-.input-warn{border-color:#FFCC00}
-.input-disabled{opacity:0.4;background:var(--neutral-100)}
-.hint-err{font-size:11px;color:var(--err);margin-top:3px}
-.hint-warn{font-size:11px;color:#B8860B;margin-top:3px}
-.field-group{display:flex;flex-direction:column;gap:3px}
-.field-label{font-size:12px;font-weight:500;color:var(--neutral-800)}
-
-/* Checkbox */
-.check-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--neutral-800)}
-.check-item input[type=checkbox]{width:16px;height:16px;accent-color:var(--brand)}
+/* Inputs */
+.inp{padding:7px 10px;border:1px solid var(--n300);border-radius:var(--r);font-size:13px;background:white;font-family:var(--ff);color:var(--n900);outline:none;width:160px}
+.inp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,102,255,0.1)}
+.inp:disabled{opacity:0.4;background:var(--n100)}
+.field{display:flex;flex-direction:column;gap:3px}
+.flbl{font-size:12px;font-weight:500;color:var(--n800)}
+.hint-e{font-size:11px;color:var(--err);margin-top:2px}
+.hint-w{font-size:11px;color:#9A6F00;margin-top:2px}
 
 /* Toggle */
-.toggle{position:relative;width:44px;height:24px;flex-shrink:0}
-.toggle input{opacity:0;width:0;height:0}
-.toggle-slider{position:absolute;top:0;left:0;right:0;bottom:0;background:var(--neutral-400);border-radius:12px;transition:0.2s;cursor:pointer}
-.toggle-slider:before{position:absolute;content:'';width:18px;height:18px;left:3px;top:3px;background:white;border-radius:50%;transition:0.2s}
-.toggle input:checked+.toggle-slider{background:var(--brand)}
-.toggle input:checked+.toggle-slider:before{transform:translateX(20px)}
-.toggle-row{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--neutral-800)}
+.tgl{position:relative;width:44px;height:24px;flex-shrink:0;cursor:pointer}
+.tgl input{opacity:0;width:0;height:0;position:absolute}
+.tgl-sl{position:absolute;top:0;left:0;right:0;bottom:0;background:var(--n400);border-radius:12px;transition:0.2s}
+.tgl-sl:before{position:absolute;content:'';width:18px;height:18px;left:3px;top:3px;background:white;border-radius:50%;transition:0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
+.tgl input:checked+.tgl-sl{background:var(--blue)}
+.tgl input:checked+.tgl-sl:before{transform:translateX(20px)}
+.tgl-row{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--n800)}
 
-/* Dropdown demo */
-.dropdown-demo{position:relative;display:inline-block}
-.dropdown-trigger{display:flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid var(--neutral-300);border-radius:var(--radius);font-size:13px;background:white;cursor:pointer;color:var(--neutral-800);font-family:var(--ff)}
-.dropdown-trigger.open{border-color:var(--brand)}
-.dropdown-menu{position:absolute;top:100%;left:0;background:white;border:1px solid var(--neutral-300);border-radius:var(--radius);padding:4px;min-width:160px;z-index:10;margin-top:4px;display:none}
-.dropdown-menu.open{display:block}
-.dropdown-item{padding:6px 10px;font-size:13px;border-radius:4px;cursor:pointer;color:var(--neutral-800)}
-.dropdown-item:hover{background:var(--neutral-100)}
+/* Dropdown */
+.dd{position:relative;display:inline-block}
+.dd-tr{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:7px 10px;border:1px solid var(--n300);border-radius:var(--r);font-size:13px;background:white;cursor:pointer;color:var(--n800);font-family:var(--ff);width:160px}
+.dd-tr.open{border-color:var(--blue)}
+.dd-menu{position:absolute;top:calc(100% + 4px);left:0;background:white;border:1px solid var(--n300);border-radius:var(--r);padding:4px;min-width:160px;z-index:50;box-shadow:0 8px 20px rgba(0,0,0,0.10);display:none}
+.dd-menu.open{display:block}
+.dd-item{padding:7px 10px;font-size:13px;border-radius:4px;cursor:pointer;color:var(--n800)}
+.dd-item:hover{background:var(--n100)}
+
+/* Checkbox / Radio */
+.chk{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--n800);cursor:pointer}
+.chk input{width:15px;height:15px;accent-color:var(--blue);cursor:pointer}
 
 /* Alert */
-.alert{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:var(--radius);font-size:13px;margin:4px 0}
-.alert-info{background:#EEF4FF;border:1px solid #B5D4F4;color:#0C447C}
-.alert-success{background:#EAFFF5;border:1px solid #9FE1CB;color:#085041}
-.alert-warning{background:#FFF9E6;border:1px solid #FAC775;color:#633806}
-.alert-error{background:#FFF0F0;border:1px solid #F7C1C1;color:#791F1F}
-.alert-close{margin-left:auto;cursor:pointer;opacity:0.6;background:none;border:none;font-size:16px;line-height:1;color:inherit}
+.alert{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border-radius:var(--r);font-size:13px;margin:4px 0;line-height:1.5}
+.a-i{background:#EEF4FF;border:1px solid #B5D4F4;color:#0C447C}
+.a-s{background:#EAFFF5;border:1px solid #9FE1CB;color:#085041}
+.a-w{background:#FFF9E6;border:1px solid #FAC775;color:#633806}
+.a-e{background:#FFF0F0;border:1px solid #F7C1C1;color:#791F1F}
+.a-cls{margin-left:auto;cursor:pointer;opacity:0.6;background:none;border:none;font-size:18px;line-height:1;color:inherit;padding:0 0 0 8px;flex-shrink:0}
+
+/* Badge */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500}
+.b-p{background:#EEF4FF;color:var(--blue-d)}
+.b-s{background:#EAFFF5;color:#085041}
+.b-w{background:#FFF9E6;color:#633806}
+.b-e{background:#FFF0F0;color:#791F1F}
+.b-n{background:var(--n100);color:var(--n700);border:1px solid var(--n300)}
 
 /* Pagination */
 .pag{display:flex;gap:4px;align-items:center}
-.pag-btn{width:30px;height:30px;border-radius:var(--radius);border:1px solid var(--neutral-300);background:white;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;color:var(--neutral-700)}
-.pag-btn.active{background:var(--brand);color:white;border-color:var(--brand)}
-.pag-btn:hover:not(.active){background:var(--neutral-100)}
+.pb{width:32px;height:32px;border-radius:var(--r);border:1px solid var(--n300);background:white;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;color:var(--n700)}
+.pb.act{background:var(--blue);color:white;border-color:var(--blue)}
+.pb:hover:not(.act){background:var(--n100)}
 
 /* Breadcrumb */
-.breadcrumb{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--neutral-600)}
-.breadcrumb a{color:var(--brand);text-decoration:none}
-.breadcrumb a.visited{color:var(--sec)}
-.bc-sep{color:var(--neutral-400);font-size:10px}
+.bc{display:flex;align-items:center;gap:5px;font-size:13px;color:var(--n600);flex-wrap:wrap}
+.bc a{color:var(--blue);text-decoration:none}.bc a:hover{text-decoration:underline}
+.bc a.vis{color:var(--sec)}
+.bc-sep{color:var(--n400);font-size:10px}
 
-/* Badge/label */
-.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500}
-.badge-primary{background:#EEF4FF;color:var(--brand-dark)}
-.badge-success{background:#EAFFF5;color:#085041}
-.badge-warning{background:#FFF9E6;color:#633806}
-.badge-error{background:#FFF0F0;color:#791F1F}
-.badge-neutral{background:var(--neutral-100);color:var(--neutral-700);border:1px solid var(--neutral-300)}
-
-/* Loading */
-.spinner{width:20px;height:20px;border:2px solid var(--neutral-200);border-top-color:var(--neutral-900);border-radius:50%;animation:spin 0.8s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* Shadow demos */
-.shadow-card{background:white;border-radius:var(--radius-lg);padding:1rem;display:flex;align-items:center;justify-content:center;font-size:12px;font-family:var(--fm);color:var(--neutral-700);width:100px;height:80px;text-align:center}
-.s-def{box-shadow:0 1px 3px rgba(0,0,0,0.12)}
-.s-md{box-shadow:0 4px 6px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.08)}
-.s-lg{box-shadow:0 10px 15px rgba(0,0,0,0.08),0 4px 6px rgba(0,0,0,0.06)}
-.s-xl{box-shadow:0 20px 25px rgba(0,0,0,0.08),0 10px 10px rgba(0,0,0,0.05)}
-.s-xxl{box-shadow:0 25px 50px rgba(0,0,0,0.12)}
-
-/* Icon grid */
-.icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px}
-.icon-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 8px;background:var(--neutral-100);border-radius:var(--radius);border:1px solid var(--neutral-200)}
-.icon-item i{font-size:22px;color:var(--neutral-900)}
-.icon-name{font-size:10px;color:var(--neutral-600);text-align:center;line-height:1.3;font-family:var(--fm)}
-
-/* Token section */
-.token-table{width:100%;border-collapse:collapse;font-size:12px}
-.token-table th{text-align:left;padding:8px 10px;background:var(--neutral-100);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--neutral-600);border-bottom:1px solid var(--neutral-300)}
-.token-table td{padding:8px 10px;border-bottom:1px solid var(--neutral-200);vertical-align:middle}
-.token-table tr:last-child td{border-bottom:none}
-.color-dot{width:14px;height:14px;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;border:1px solid rgba(0,0,0,0.08)}
-
-/* Info callout */
-.callout{background:#EEF4FF;border:1px solid #B5D4F4;border-radius:var(--radius-lg);padding:1rem 1.25rem;margin:1.5rem 0;font-size:13px;color:#0C447C;line-height:1.6}
-.callout strong{font-weight:600}
-.callout-warn{background:#FFF9E6;border-color:#FAC775;color:#633806}
+/* Spinner */
+.spin{width:22px;height:22px;border:2.5px solid var(--n200);border-top-color:var(--n800);border-radius:50%;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
 
 /* Tabs */
-.tab-bar{display:flex;gap:0;border-bottom:1px solid var(--neutral-300);margin-bottom:1.5rem}
-.tab{padding:8px 16px;font-size:13px;font-weight:500;color:var(--neutral-600);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.15s}
-.tab.active{color:var(--brand);border-bottom-color:var(--brand)}
-.tab:hover:not(.active){color:var(--neutral-800)}
-.tab-content{display:none}.tab-content.active{display:block}
+.tab-bar{display:flex;border-bottom:1px solid var(--n300)}
+.tab{padding:8px 14px;font-size:13px;font-weight:500;color:var(--n600);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.15s}
+.tab.act{color:var(--blue);border-bottom-color:var(--blue)}
+.tab-content{display:none;padding:1rem;font-size:13px;color:var(--n700)}.tab-content.act{display:block}
 
-/* Radio */
-.radio-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--neutral-800)}
-.radio-item input[type=radio]{width:16px;height:16px;accent-color:var(--brand)}
+/* Token table */
+.ttbl{width:100%;border-collapse:collapse;font-size:12px}
+.ttbl th{text-align:left;padding:8px 12px;background:var(--n100);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--n600);border-bottom:1px solid var(--n300)}
+.ttbl td{padding:9px 12px;border-bottom:1px solid var(--n200);vertical-align:middle}
+.ttbl tr:last-child td{border-bottom:none}
+.cdot{width:13px;height:13px;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;border:1px solid rgba(0,0,0,0.08);flex-shrink:0}
 
-/* Link states */
-.link{color:var(--brand);text-decoration:none;font-size:13px}
-.link:hover{text-decoration:underline}
-.link.visited{color:var(--sec)}
-.link.bold-link{font-weight:600;color:var(--brand)}
+/* Data table */
+.dtbl{width:100%;border-collapse:collapse;font-size:13px}
+.dtbl th{text-align:left;padding:9px 12px;background:var(--n900);color:white;font-size:12px;font-weight:500}
+.dtbl td{padding:8px 12px;border-bottom:1px solid var(--n200)}
+.dtbl tr:hover td{background:var(--n50)}
 
-/* Data table demo */
-.data-table{width:100%;border-collapse:collapse;font-size:12px}
-.data-table th{text-align:left;padding:8px 10px;background:var(--neutral-900);color:white;font-size:11px;font-weight:500}
-.data-table td{padding:7px 10px;border-bottom:1px solid var(--neutral-200)}
-.data-table tr:hover td{background:var(--neutral-50)}
+/* Modal overlay */
+.ov{background:rgba(0,0,0,0.35);border-radius:var(--rl);padding:2rem;display:flex;align-items:center;justify-content:center;min-height:200px;margin:0.75rem 0}
+.modal{background:white;border-radius:var(--rl);padding:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,0.15)}
+
+/* Link */
+.lnk{color:var(--blue);text-decoration:none;font-size:13px}.lnk:hover{text-decoration:underline}
+.lnk.vis{color:var(--sec)}.lnk.bld{font-weight:600}
 </style>
-
-<h2 class="sr-only">Aigent Design System Documentation</h2>
-
+</head>
+<body>
 <div class="layout">
   <nav class="sidebar">
-    <div class="sidebar-logo">
-      <div class="brand">aigent <span style="color:var(--brand)">DS</span></div>
-      <div class="sub">Design System v1.1</div>
+    <div class="logo">
+      <div class="logo-name">aigent <span>DS</span></div>
+      <div class="logo-sub">Design System v1.1</div>
     </div>
     <div class="nav-section">Overview</div>
-    <a class="nav-item active" onclick="nav('intro')">Introduction</a>
+    <a class="nav-item active" onclick="nav('intro',this)">Introduction</a>
     <div class="nav-section">Foundations</div>
-    <a class="nav-item" onclick="nav('colors')">Colors</a>
-    <a class="nav-item" onclick="nav('typography')">Typography</a>
-    <a class="nav-item" onclick="nav('grids')">Grids</a>
-    <a class="nav-item" onclick="nav('icons')">Icons</a>
-    <a class="nav-item" onclick="nav('shadows')">Shadows</a>
+    <a class="nav-item" onclick="nav('colors',this)">Colors</a>
+    <a class="nav-item" onclick="nav('typography',this)">Typography</a>
+    <a class="nav-item" onclick="nav('grids',this)">Grids</a>
+    <a class="nav-item" onclick="nav('icons',this)">Icons</a>
+    <a class="nav-item" onclick="nav('shadows',this)">Shadows</a>
     <div class="nav-section">Components</div>
-    <a class="nav-item" onclick="nav('buttons')">Buttons</a>
-    <a class="nav-item" onclick="nav('inputs')">Inputs & Forms</a>
-    <a class="nav-item" onclick="nav('feedback')">Alerts & Labels</a>
-    <a class="nav-item" onclick="nav('navigation')">Navigation</a>
-    <a class="nav-item" onclick="nav('overlay')">Modals & Overlays</a>
-    <a class="nav-item" onclick="nav('data')">Data Display</a>
+    <a class="nav-item" onclick="nav('buttons',this)">Buttons</a>
+    <a class="nav-item" onclick="nav('inputs',this)">Inputs & Forms</a>
+    <a class="nav-item" onclick="nav('feedback',this)">Alerts & Labels</a>
+    <a class="nav-item" onclick="nav('navigation',this)">Navigation</a>
+    <a class="nav-item" onclick="nav('overlay',this)">Modals & Overlays</a>
+    <a class="nav-item" onclick="nav('data',this)">Data Display</a>
     <div class="nav-section">Modern Tokens</div>
-    <a class="nav-item" onclick="nav('tokens')">Token Architecture</a>
+    <a class="nav-item" onclick="nav('tokens',this)">Token Architecture</a>
   </nav>
 
   <main class="content">
@@ -226,51 +223,36 @@ body{font-family:var(--ff);color:var(--neutral-900);background:transparent;line-
     <div class="page active" id="page-intro">
       <div class="page-title">Aigent Design System</div>
       <div class="page-desc">A unified visual language for the Aigent platform — covering foundations, components, and usage guidelines for consistent, accessible product experiences.</div>
-      <div class="callout"><strong>About this system.</strong> Built for a B2B enterprise SaaS platform (contact center intelligence), this system prioritizes clarity, data density, and trust. The primary blue (#0066FF) carries authority across all interaction states. Components were versioned in Figma with explicit changelog notes and archived states.</div>
-
-      <div class="section-title">What's in this system</div>
+      <div class="callout"><strong>About this system.</strong> Built for a B2B enterprise SaaS platform (contact center intelligence), this system prioritizes clarity, data density, and trust. Components were versioned in Figma with explicit changelog notes and archived states.</div>
+      <div class="sec">What's included</div>
       <div class="comp-grid">
-        <div class="comp-card">
-          <div class="comp-name">Foundations</div>
-          <div class="comp-desc">Color palettes, type scale, responsive grid specs, icon library, and elevation tokens.</div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-name">Components</div>
-          <div class="comp-desc">20+ versioned UI components covering all major interaction patterns in the platform.</div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-name">Usage Guidelines</div>
-          <div class="comp-desc">When to use, when not to use, and state documentation for every component.</div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-name">Modern Token Map</div>
-          <div class="comp-desc">A forward-looking view of how this system maps to W3C Design Token architecture and AI-assisted theming.</div>
-        </div>
+        <div class="comp-card"><div class="comp-name">Foundations</div><div class="comp-desc">Color palettes, type scale, responsive grid specs, icon library, and elevation tokens.</div></div>
+        <div class="comp-card"><div class="comp-name">Components</div><div class="comp-desc">20+ versioned UI components covering all major interaction patterns in the platform.</div></div>
+        <div class="comp-card"><div class="comp-name">Usage Guidelines</div><div class="comp-desc">When to use, when not to use, and state documentation for every component.</div></div>
+        <div class="comp-card"><div class="comp-name">Modern Token Map</div><div class="comp-desc">How this system maps to W3C Design Token architecture and AI-assisted theming.</div></div>
       </div>
-
-      <div class="section-title">Component inventory</div>
-      <table class="data-table" style="font-size:12px">
+      <div class="sec">Component inventory</div>
+      <table class="dtbl" style="font-size:12px">
         <thead><tr><th>Component</th><th>Version</th><th>Status</th></tr></thead>
         <tbody>
-          <tr><td>Breadcrumbs</td><td class="token-badge" style="font-size:10px">v1.1</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Checkbox</td><td class="token-badge" style="font-size:10px">v1.1</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Radio Button</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Dropdown</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Option</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Pagination</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Buttons</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Loading / Spinner</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Audio Scrubber</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Modals / Pop-ups</td><td class="token-badge" style="font-size:10px">v2.1</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Inputs</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Toggles</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Date Picker</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Links</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Labels / Badges</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Tabs</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Transcription Menu</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-neutral">Specialized</span></td></tr>
-          <tr><td>Tables</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-success">Stable</span></td></tr>
-          <tr><td>Dark/Light Mode</td><td class="token-badge" style="font-size:10px">v1.0</td><td><span class="badge badge-neutral">Utility</span></td></tr>
+          <tr><td>Breadcrumbs</td><td><span class="tok">v1.1</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Checkbox</td><td><span class="tok">v1.1</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Radio Button</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Dropdown</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Pagination</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Buttons</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Loading / Spinner</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Audio Scrubber</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Modals / Pop-ups</td><td><span class="tok">v2.1</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Inputs</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Toggles</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Date Picker</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Links</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Labels / Badges</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Tabs</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Transcription Menu</td><td><span class="tok">v1.0</span></td><td><span class="badge b-n">Specialized</span></td></tr>
+          <tr><td>Tables</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Dark / Light Mode</td><td><span class="tok">v1.0</span></td><td><span class="badge b-n">Utility</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -278,208 +260,106 @@ body{font-family:var(--ff);color:var(--neutral-900);background:transparent;line-
     <!-- COLORS -->
     <div class="page" id="page-colors">
       <div class="page-title">Colors</div>
-      <div class="page-desc">The Aigent color system uses semantic ramps across 8 palettes. Each ramp scales from 50 (lightest) to 900 (darkest). Use numbered stops — never custom hex values outside the scale.</div>
-
-      <div class="section-title">Neutral</div>
+      <div class="page-desc">The Aigent color system uses semantic ramps across 8 palettes. Each ramp scales from 50 (lightest) to 900 (darkest). Always reference colors by ramp + step — never hardcode hex values in components.</div>
+      <div class="sec">Neutral</div>
       <div class="swatches">
-        <div class="swatch"><div class="swatch-color" style="background:#F9F9F9"></div><div class="swatch-info"><div class="swatch-step">50</div><div class="swatch-hex">#F9F9F9</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#F4F6FA"></div><div class="swatch-info"><div class="swatch-step">100</div><div class="swatch-hex">#F4F6FA</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#F2F2F2"></div><div class="swatch-info"><div class="swatch-step">200</div><div class="swatch-hex">#F2F2F2</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#E3E3E3"></div><div class="swatch-info"><div class="swatch-step">300</div><div class="swatch-hex">#E3E3E3</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#CBCBCB"></div><div class="swatch-info"><div class="swatch-step">400</div><div class="swatch-hex">#CBCBCB</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#BCBCBC"></div><div class="swatch-info"><div class="swatch-step">500</div><div class="swatch-hex">#BCBCBC</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#9E9E9E"></div><div class="swatch-info"><div class="swatch-step">600</div><div class="swatch-hex">#9E9E9E</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#787878"></div><div class="swatch-info"><div class="swatch-step">700</div><div class="swatch-hex">#787878</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#535353"></div><div class="swatch-info"><div class="swatch-step">800</div><div class="swatch-hex">#535353</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#202944"></div><div class="swatch-info"><div class="swatch-step">900</div><div class="swatch-hex">#202944</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#F9F9F9"></div><div class="sw-i"><div class="sw-s">50</div><div class="sw-h">#F9F9F9</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#F4F6FA"></div><div class="sw-i"><div class="sw-s">100</div><div class="sw-h">#F4F6FA</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#F2F2F2"></div><div class="sw-i"><div class="sw-s">200</div><div class="sw-h">#F2F2F2</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#E3E3E3"></div><div class="sw-i"><div class="sw-s">300</div><div class="sw-h">#E3E3E3</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#CBCBCB"></div><div class="sw-i"><div class="sw-s">400</div><div class="sw-h">#CBCBCB</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#9E9E9E"></div><div class="sw-i"><div class="sw-s">600</div><div class="sw-h">#9E9E9E</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#787878"></div><div class="sw-i"><div class="sw-s">700</div><div class="sw-h">#787878</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#535353"></div><div class="sw-i"><div class="sw-s">800</div><div class="sw-h">#535353</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#202944"></div><div class="sw-i"><div class="sw-s">900</div><div class="sw-h">#202944</div></div></div>
       </div>
-
-      <div class="section-title">Primary</div>
+      <div class="sec">Primary</div>
       <div class="swatches">
-        <div class="swatch"><div class="swatch-color" style="background:#68A4FF"></div><div class="swatch-info"><div class="swatch-step">50</div><div class="swatch-hex">#68A4FF</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#408CFF"></div><div class="swatch-info"><div class="swatch-step">300</div><div class="swatch-hex">#408CFF</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#0066FF"></div><div class="swatch-info"><div class="swatch-step">500</div><div class="swatch-hex">#0066FF</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#0254D2"></div><div class="swatch-info"><div class="swatch-step">700</div><div class="swatch-hex">#0254D2</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#0041A4"></div><div class="swatch-info"><div class="swatch-step">900</div><div class="swatch-hex">#0041A4</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#68A4FF"></div><div class="sw-i"><div class="sw-s">50</div><div class="sw-h">#68A4FF</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#408CFF"></div><div class="sw-i"><div class="sw-s">300</div><div class="sw-h">#408CFF</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#0066FF"></div><div class="sw-i"><div class="sw-s">500</div><div class="sw-h">#0066FF</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#0254D2"></div><div class="sw-i"><div class="sw-s">700</div><div class="sw-h">#0254D2</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#0041A4"></div><div class="sw-i"><div class="sw-s">900</div><div class="sw-h">#0041A4</div></div></div>
       </div>
-
-      <div class="section-title">Secondary</div>
+      <div class="sec">Secondary</div>
       <div class="swatches">
-        <div class="swatch"><div class="swatch-color" style="background:#6960EB"></div><div class="swatch-info"><div class="swatch-step">50</div><div class="swatch-hex">#6960EB</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#6058D2"></div><div class="swatch-info"><div class="swatch-step">300</div><div class="swatch-hex">#6058D2</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#574FBF"></div><div class="swatch-info"><div class="swatch-step">500</div><div class="swatch-hex">#574FBF</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#4B44A3"></div><div class="swatch-info"><div class="swatch-step">700</div><div class="swatch-hex">#4B44A3</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#413C8B"></div><div class="swatch-info"><div class="swatch-step">900</div><div class="swatch-hex">#413C8B</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#6960EB"></div><div class="sw-i"><div class="sw-s">50</div><div class="sw-h">#6960EB</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#6058D2"></div><div class="sw-i"><div class="sw-s">300</div><div class="sw-h">#6058D2</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#574FBF"></div><div class="sw-i"><div class="sw-s">500</div><div class="sw-h">#574FBF</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#4B44A3"></div><div class="sw-i"><div class="sw-s">700</div><div class="sw-h">#4B44A3</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#413C8B"></div><div class="sw-i"><div class="sw-s">900</div><div class="sw-h">#413C8B</div></div></div>
       </div>
-
-      <div class="section-title">Semantic</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-        <div>
-          <div class="color-label" style="margin-bottom:6px;font-size:12px;font-weight:600;color:var(--neutral-800)">Success</div>
-          <div class="swatches">
-            <div class="swatch"><div class="swatch-color" style="background:#00EA73"></div><div class="swatch-info"><div class="swatch-step">50</div><div class="swatch-hex">#00EA73</div></div></div>
-            <div class="swatch"><div class="swatch-color" style="background:#06B95E"></div><div class="swatch-info"><div class="swatch-step">500</div><div class="swatch-hex">#06B95E</div></div></div>
-            <div class="swatch"><div class="swatch-color" style="background:#007A3C"></div><div class="swatch-info"><div class="swatch-step">900</div><div class="swatch-hex">#007A3C</div></div></div>
-          </div>
-        </div>
-        <div>
-          <div class="color-label" style="margin-bottom:6px;font-size:12px;font-weight:600;color:var(--neutral-800)">Error</div>
-          <div class="swatches">
-            <div class="swatch"><div class="swatch-color" style="background:#FF4854"></div><div class="swatch-info"><div class="swatch-step">50</div><div class="swatch-hex">#FF4854</div></div></div>
-            <div class="swatch"><div class="swatch-color" style="background:#E10412"></div><div class="swatch-info"><div class="swatch-step">500</div><div class="swatch-hex">#E10412</div></div></div>
-            <div class="swatch"><div class="swatch-color" style="background:#9C010B"></div><div class="swatch-info"><div class="swatch-step">900</div><div class="swatch-hex">#9C010B</div></div></div>
-          </div>
-        </div>
-        <div>
-          <div class="color-label" style="margin-bottom:6px;font-size:12px;font-weight:600;color:var(--neutral-800)">Warning</div>
-          <div class="swatches">
-            <div class="swatch"><div class="swatch-color" style="background:#FFF1B7"></div><div class="swatch-info"><div class="swatch-step">50</div><div class="swatch-hex">#FFF1B7</div></div></div>
-            <div class="swatch"><div class="swatch-color" style="background:#FADC63"></div><div class="swatch-info"><div class="swatch-step">500</div><div class="swatch-hex">#FADC63</div></div></div>
-            <div class="swatch"><div class="swatch-color" style="background:#E1B400"></div><div class="swatch-info"><div class="swatch-step">900</div><div class="swatch-hex">#E1B400</div></div></div>
-          </div>
-        </div>
-        <div>
-          <div class="color-label" style="margin-bottom:6px;font-size:12px;font-weight:600;color:var(--neutral-800)">Tertiary</div>
-          <div class="swatches">
-            <div class="swatch"><div class="swatch-color" style="background:#2FB88A"></div><div class="swatch-info"><div class="swatch-step">500</div><div class="swatch-hex">#2FB88A</div></div></div>
-          </div>
-        </div>
+      <div class="sec">Semantic</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem">
+        <div><div style="font-size:12px;font-weight:600;color:var(--n800);margin-bottom:6px">Success</div><div class="swatches"><div class="swatch"><div class="sw-c" style="background:#00EA73"></div><div class="sw-i"><div class="sw-s">50</div><div class="sw-h">#00EA73</div></div></div><div class="swatch"><div class="sw-c" style="background:#06B95E"></div><div class="sw-i"><div class="sw-s">500</div><div class="sw-h">#06B95E</div></div></div><div class="swatch"><div class="sw-c" style="background:#007A3C"></div><div class="sw-i"><div class="sw-s">900</div><div class="sw-h">#007A3C</div></div></div></div></div>
+        <div><div style="font-size:12px;font-weight:600;color:var(--n800);margin-bottom:6px">Error</div><div class="swatches"><div class="swatch"><div class="sw-c" style="background:#FF4854"></div><div class="sw-i"><div class="sw-s">50</div><div class="sw-h">#FF4854</div></div></div><div class="swatch"><div class="sw-c" style="background:#E10412"></div><div class="sw-i"><div class="sw-s">500</div><div class="sw-h">#E10412</div></div></div><div class="swatch"><div class="sw-c" style="background:#9C010B"></div><div class="sw-i"><div class="sw-s">900</div><div class="sw-h">#9C010B</div></div></div></div></div>
+        <div><div style="font-size:12px;font-weight:600;color:var(--n800);margin-bottom:6px">Warning</div><div class="swatches"><div class="swatch"><div class="sw-c" style="background:#FFF1B7"></div><div class="sw-i"><div class="sw-s">50</div><div class="sw-h">#FFF1B7</div></div></div><div class="swatch"><div class="sw-c" style="background:#FADC63"></div><div class="sw-i"><div class="sw-s">500</div><div class="sw-h">#FADC63</div></div></div><div class="swatch"><div class="sw-c" style="background:#E1B400"></div><div class="sw-i"><div class="sw-s">900</div><div class="sw-h">#E1B400</div></div></div></div></div>
+        <div><div style="font-size:12px;font-weight:600;color:var(--n800);margin-bottom:6px">Tertiary</div><div class="swatches"><div class="swatch"><div class="sw-c" style="background:#2FB88A"></div><div class="sw-i"><div class="sw-s">500</div><div class="sw-h">#2FB88A</div></div></div></div></div>
       </div>
-
-      <div class="section-title">Shades</div>
+      <div class="sec">Shades</div>
       <div class="swatches">
-        <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;border:1px solid var(--neutral-200)"></div><div class="swatch-info"><div class="swatch-step">White</div><div class="swatch-hex">#FFFFFF</div></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#000000"></div><div class="swatch-info"><div class="swatch-step">Black</div><div class="swatch-hex">#000000</div></div></div>
-      </div>
-
-      <div class="callout" style="margin-top:1.5rem">
-        <strong>Usage rule:</strong> Always reference colors by their ramp + step (e.g. Primary/500). Never hardcode hex values in components — this ensures future theming and dark mode remain feasible.
+        <div class="swatch"><div class="sw-c" style="background:#FFFFFF"></div><div class="sw-i"><div class="sw-s">White</div><div class="sw-h">#FFFFFF</div></div></div>
+        <div class="swatch"><div class="sw-c" style="background:#000000"></div><div class="sw-i"><div class="sw-s">Black</div><div class="sw-h">#000000</div></div></div>
       </div>
     </div>
 
     <!-- TYPOGRAPHY -->
     <div class="page" id="page-typography">
       <div class="page-title">Typography</div>
-      <div class="page-desc">The type system is built on a two-weight scale (Semi Bold and Bold → Extra Bold) across Display, Heading, and Paragraph roles. All sizes are defined in relative units for accessibility compliance.</div>
-
-      <div class="section-title">Scale</div>
-      <div class="type-row"><div class="type-meta"><div class="type-label">Display 01</div><div class="type-tokens"><span class="token-badge">40px</span><span class="token-badge">SemiBold</span></div></div><div class="type-example" style="font-size:28px;font-weight:600;letter-spacing:-1px">Display 01</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-label">Display 02</div><div class="type-tokens"><span class="token-badge">32px</span><span class="token-badge">SemiBold</span></div></div><div class="type-example" style="font-size:22px;font-weight:600;letter-spacing:-0.5px">Display 02</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-label">Heading 01</div><div class="type-tokens"><span class="token-badge">28px</span><span class="token-badge">SemiBold</span></div></div><div class="type-example" style="font-size:20px;font-weight:600">Heading 01</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-label">Heading 02</div><div class="type-tokens"><span class="token-badge">22px</span><span class="token-badge">SemiBold</span></div></div><div class="type-example" style="font-size:17px;font-weight:600">Heading 02</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-label">Heading 03</div><div class="type-tokens"><span class="token-badge">18px</span><span class="token-badge">SemiBold</span></div></div><div class="type-example" style="font-size:15px;font-weight:600">Heading 03</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-label">Heading 04</div><div class="type-tokens"><span class="token-badge">16px</span><span class="token-badge">SemiBold</span></div></div><div class="type-example" style="font-size:14px;font-weight:600">Heading 04</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-label">Heading 05</div><div class="type-tokens"><span class="token-badge">14px</span><span class="token-badge">SemiBold</span></div></div><div class="type-example" style="font-size:13px;font-weight:600">Heading 05</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-label">Paragraph 01</div><div class="type-tokens"><span class="token-badge">14px</span><span class="token-badge">Regular</span></div></div><div class="type-example" style="font-size:13px;line-height:1.6;color:var(--neutral-700)">It is a long established fact that a reader will be distracted by the readable content.</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-label">Paragraph 02</div><div class="type-tokens"><span class="token-badge">12px</span><span class="token-badge">Regular</span></div></div><div class="type-example" style="font-size:12px;line-height:1.6;color:var(--neutral-700)">It is a long established fact that a reader will be distracted by the readable content of the page when looking at its layout.</div></div>
-
-      <div class="section-title">Weight variants</div>
-      <div class="demo-block">
-        <div class="demo-label">Same level, three weights</div>
-        <span style="font-size:16px;font-weight:400;color:var(--neutral-800)">Semi Bold (400)</span>
-        <span style="font-size:16px;font-weight:600;color:var(--neutral-800)">Bold (600)</span>
-        <span style="font-size:16px;font-weight:700;color:var(--neutral-800)">Extra Bold (700)</span>
-      </div>
-
-      <div class="callout callout-warn" style="margin-top:1.5rem">
-        <strong>Note:</strong> Each role (Display, Heading, Paragraph) supports three weights — use Semi Bold as default, Bold for emphasis, and Extra Bold only for hero/featured moments. Never mix weights within a single text block.
-      </div>
+      <div class="page-desc">Two-weight scale (Semi Bold / Extra Bold) across Display, Heading, and Paragraph roles. All sizes defined in relative units for accessibility compliance.</div>
+      <div class="sec">Scale</div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Display 01</div><div class="type-toks"><span class="tok">40px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:26px;font-weight:600;letter-spacing:-1px">Display 01</div></div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Display 02</div><div class="type-toks"><span class="tok">32px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:21px;font-weight:600;letter-spacing:-0.5px">Display 02</div></div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Heading 01</div><div class="type-toks"><span class="tok">28px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:18px;font-weight:600">Heading 01</div></div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Heading 02</div><div class="type-toks"><span class="tok">22px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:16px;font-weight:600">Heading 02</div></div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Heading 03</div><div class="type-toks"><span class="tok">18px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:14px;font-weight:600">Heading 03</div></div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Heading 04</div><div class="type-toks"><span class="tok">16px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:13px;font-weight:600">Heading 04</div></div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Paragraph 01</div><div class="type-toks"><span class="tok">14px</span><span class="tok">Regular</span></div></div><div class="type-ex" style="font-size:13px;line-height:1.6;color:var(--n700)">It is a long established fact that a reader will be distracted by the readable content of the page when looking at its layout.</div></div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Paragraph 02</div><div class="type-toks"><span class="tok">12px</span><span class="tok">Regular</span></div></div><div class="type-ex" style="font-size:12px;line-height:1.6;color:var(--n700)">It is a long established fact that a reader will be distracted by the readable content of the page when looking at its layout.</div></div>
+      <div class="sec">Weight variants</div>
+      <div class="demo"><div class="demo-lbl">Three weights at the same level</div><span style="font-size:15px;font-weight:400">Semi Bold (400)</span><span style="font-size:15px;font-weight:600">Bold (600)</span><span style="font-size:15px;font-weight:700">Extra Bold (700)</span></div>
+      <div class="callout cw">Use Semi Bold as default, Bold for emphasis, Extra Bold only for hero moments. Never mix weights within a single text block.</div>
     </div>
 
     <!-- GRIDS -->
     <div class="page" id="page-grids">
       <div class="page-title">Grids</div>
-      <div class="page-desc">A three-tier responsive grid system covering Desktop, Tablet, and Mobile breakpoints. Gutter is consistent at 20px across all tiers.</div>
-
-      <div class="grid-card">
-        <div class="grid-label">Desktop</div>
-        <div class="grid-spec">Range: 1280px – 1728px &nbsp;·&nbsp; 12 columns &nbsp;·&nbsp; Margins: 120px &nbsp;·&nbsp; Gutter: 20px</div>
-        <div class="grid-vis"><?php for($i=0;$i<12;$i++) echo '<div class="grid-col"></div>'; ?></div>
-        <div class="grid-vis" style="margin-top:4px"><?php for($i=0;$i<12;$i++) echo '<div class="grid-col"></div>'; ?></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="grid-label">Tablet</div>
-        <div class="grid-spec">Range: 744px – 1024px &nbsp;·&nbsp; 6 columns &nbsp;·&nbsp; Margins: 60px &nbsp;·&nbsp; Gutter: 20px</div>
-        <div class="grid-vis" style="max-width:70%"><?php for($i=0;$i<6;$i++) echo '<div class="grid-col"></div>'; ?></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="grid-label">Mobile</div>
-        <div class="grid-spec">Range: 320px – 428px &nbsp;·&nbsp; 4 columns &nbsp;·&nbsp; Margins: 30px &nbsp;·&nbsp; Gutter: 20px</div>
-        <div class="grid-vis" style="max-width:40%"><?php for($i=0;$i<4;$i++) echo '<div class="grid-col"></div>'; ?></div>
-      </div>
-
-      <div class="callout">
-        <strong>When to constrain.</strong> Always stay within the column grid. Full-bleed elements (tables, charts, video) may span all columns but must still respect side margins. Never place interactive controls outside the column structure.
-      </div>
+      <div class="page-desc">Three-tier responsive grid. Gutter is consistent at 20px across all breakpoints. Never place interactive controls outside the column structure.</div>
+      <div class="sec">Breakpoints</div>
+      <div class="grid-card"><div class="grid-lbl">Desktop</div><div class="grid-spec">Range: 1280px – 1728px &nbsp;·&nbsp; 12 columns &nbsp;·&nbsp; Margins: 120px &nbsp;·&nbsp; Gutter: 20px</div><div class="grid-vis" id="gd"></div></div>
+      <div class="grid-card"><div class="grid-lbl">Tablet</div><div class="grid-spec">Range: 744px – 1024px &nbsp;·&nbsp; 6 columns &nbsp;·&nbsp; Margins: 60px &nbsp;·&nbsp; Gutter: 20px</div><div class="grid-vis" id="gt" style="max-width:60%"></div></div>
+      <div class="grid-card"><div class="grid-lbl">Mobile</div><div class="grid-spec">Range: 320px – 428px &nbsp;·&nbsp; 4 columns &nbsp;·&nbsp; Margins: 30px &nbsp;·&nbsp; Gutter: 20px</div><div class="grid-vis" id="gm" style="max-width:36%"></div></div>
     </div>
 
     <!-- ICONS -->
     <div class="page" id="page-icons">
       <div class="page-title">Icons</div>
-      <div class="page-desc">Custom icon set built for the Aigent platform. All icons render in Large size (24px). Icons appear in two contexts: standalone (solid fill, Neutral 900) and within colored containers (inheriting the container's foreground color).</div>
-
-      <div class="section-title">Icon library — large set</div>
-      <div class="icon-grid">
-        <div class="icon-item"><i class="ti ti-user" aria-hidden="true"></i><span class="icon-name">Profile</span></div>
-        <div class="icon-item"><i class="ti ti-logout" aria-hidden="true"></i><span class="icon-name">Log out</span></div>
-        <div class="icon-item"><i class="ti ti-camera" aria-hidden="true"></i><span class="icon-name">Camera</span></div>
-        <div class="icon-item"><i class="ti ti-help-circle" aria-hidden="true"></i><span class="icon-name">Help</span></div>
-        <div class="icon-item"><i class="ti ti-refresh" aria-hidden="true"></i><span class="icon-name">Change</span></div>
-        <div class="icon-item"><i class="ti ti-phone" aria-hidden="true"></i><span class="icon-name">Phone</span></div>
-        <div class="icon-item"><i class="ti ti-check" aria-hidden="true"></i><span class="icon-name">Check</span></div>
-        <div class="icon-item"><i class="ti ti-lock" aria-hidden="true"></i><span class="icon-name">Password</span></div>
-        <div class="icon-item"><i class="ti ti-activity" aria-hidden="true"></i><span class="icon-name">Heartbeat</span></div>
-        <div class="icon-item"><i class="ti ti-player-pause" aria-hidden="true"></i><span class="icon-name">Pause</span></div>
-        <div class="icon-item"><i class="ti ti-clock" aria-hidden="true"></i><span class="icon-name">History</span></div>
-        <div class="icon-item"><i class="ti ti-id-badge" aria-hidden="true"></i><span class="icon-name">Agent ID</span></div>
-        <div class="icon-item"><i class="ti ti-star" aria-hidden="true"></i><span class="icon-name">Star</span></div>
-        <div class="icon-item"><i class="ti ti-user-circle" aria-hidden="true"></i><span class="icon-name">Customer</span></div>
-        <div class="icon-item"><i class="ti ti-calendar" aria-hidden="true"></i><span class="icon-name">Calendar</span></div>
-        <div class="icon-item"><i class="ti ti-map-pin" aria-hidden="true"></i><span class="icon-name">Location</span></div>
-        <div class="icon-item"><i class="ti ti-search" aria-hidden="true"></i><span class="icon-name">Search</span></div>
-        <div class="icon-item"><i class="ti ti-loader" aria-hidden="true"></i><span class="icon-name">Loading</span></div>
-        <div class="icon-item"><i class="ti ti-pencil" aria-hidden="true"></i><span class="icon-name">Edit</span></div>
-        <div class="icon-item"><i class="ti ti-mail" aria-hidden="true"></i><span class="icon-name">Email</span></div>
-        <div class="icon-item"><i class="ti ti-world" aria-hidden="true"></i><span class="icon-name">Internet</span></div>
-        <div class="icon-item"><i class="ti ti-device-desktop" aria-hidden="true"></i><span class="icon-name">Desktop</span></div>
-        <div class="icon-item"><i class="ti ti-alert-triangle" aria-hidden="true"></i><span class="icon-name">Warning</span></div>
-        <div class="icon-item"><i class="ti ti-trash" aria-hidden="true"></i><span class="icon-name">Delete</span></div>
-        <div class="icon-item"><i class="ti ti-copy" aria-hidden="true"></i><span class="icon-name">Copy</span></div>
-        <div class="icon-item"><i class="ti ti-chart-bar" aria-hidden="true"></i><span class="icon-name">Reports</span></div>
-        <div class="icon-item"><i class="ti ti-eye" aria-hidden="true"></i><span class="icon-name">Visibility</span></div>
-        <div class="icon-item"><i class="ti ti-robot" aria-hidden="true"></i><span class="icon-name">Robot</span></div>
-      </div>
-
-      <div class="callout" style="margin-top:1.5rem">
-        <strong>Usage rules.</strong> Always pair icons with a text label when used in navigation. Standalone icon-only controls require an accessible <span class="token-badge">aria-label</span>. Do not recolor icons outside of their defined semantic states.
-      </div>
+      <div class="page-desc">Custom icon set built for the Aigent platform. All icons render at 24px. Always pair icons with a visible text label in navigation. Icon-only controls require an accessible aria-label.</div>
+      <div class="sec">Icon library</div>
+      <div class="icon-grid" id="icon-grid"></div>
     </div>
 
     <!-- SHADOWS -->
     <div class="page" id="page-shadows">
       <div class="page-title">Drop Shadows</div>
-      <div class="page-desc">Five elevation levels define depth across the interface. Use the lowest elevation that communicates the component's relationship to the content beneath it.</div>
-
-      <div class="section-title">Elevation scale</div>
-      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.5rem 0">
-        <div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div class="shadow-card s-def">shadow-def</div><span style="font-size:11px;color:var(--neutral-600)">Resting cards</span></div>
-        <div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div class="shadow-card s-md">shadow-md</div><span style="font-size:11px;color:var(--neutral-600)">Hover states</span></div>
-        <div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div class="shadow-card s-lg">shadow-lg</div><span style="font-size:11px;color:var(--neutral-600)">Dropdowns</span></div>
-        <div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div class="shadow-card s-xl">shadow-xl</div><span style="font-size:11px;color:var(--neutral-600)">Modals</span></div>
-        <div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div class="shadow-card s-xxl">shadow-xxl</div><span style="font-size:11px;color:var(--neutral-600)">Top layer</span></div>
+      <div class="page-desc">Five elevation levels define depth. Use the lowest elevation that communicates the component's relationship to the content beneath it.</div>
+      <div class="sec">Elevation scale</div>
+      <div class="sh-wrap">
+        <div class="sh-card"><div class="sh-box s0">shadow-def</div><div class="sh-lbl">Cards at rest</div></div>
+        <div class="sh-card"><div class="sh-box s1">shadow-md</div><div class="sh-lbl">Hover states</div></div>
+        <div class="sh-card"><div class="sh-box s2">shadow-lg</div><div class="sh-lbl">Dropdowns</div></div>
+        <div class="sh-card"><div class="sh-box s3">shadow-xl</div><div class="sh-lbl">Modals</div></div>
+        <div class="sh-card"><div class="sh-box s4">shadow-xxl</div><div class="sh-lbl">Top layer</div></div>
       </div>
-
-      <div class="section-title">Token reference</div>
-      <table class="token-table">
-        <thead><tr><th>Token</th><th>CSS Value</th><th>Usage</th></tr></thead>
+      <div class="sec">Token values</div>
+      <table class="ttbl">
+        <thead><tr><th>Token</th><th>CSS value</th><th>Usage</th></tr></thead>
         <tbody>
-          <tr><td><span class="token-badge">shadow-def</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--neutral-700)">0 1px 3px rgba(0,0,0,0.12)</td><td>Cards, list items at rest</td></tr>
-          <tr><td><span class="token-badge">shadow-md</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--neutral-700)">0 4px 6px rgba(0,0,0,0.08)</td><td>Hovered cards, selected states</td></tr>
-          <tr><td><span class="token-badge">shadow-lg</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--neutral-700)">0 10px 15px rgba(0,0,0,0.08)</td><td>Dropdown menus, popovers</td></tr>
-          <tr><td><span class="token-badge">shadow-xl</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--neutral-700)">0 20px 25px rgba(0,0,0,0.08)</td><td>Modals, dialogs</td></tr>
-          <tr><td><span class="token-badge">shadow-xxl</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--neutral-700)">0 25px 50px rgba(0,0,0,0.12)</td><td>Top-layer overlays only</td></tr>
+          <tr><td><span class="tok">shadow-def</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--n700)">0 1px 3px rgba(0,0,0,0.12)</td><td>Cards, list items at rest</td></tr>
+          <tr><td><span class="tok">shadow-md</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--n700)">0 4px 8px rgba(0,0,0,0.10)</td><td>Hovered cards, selected states</td></tr>
+          <tr><td><span class="tok">shadow-lg</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--n700)">0 10px 20px rgba(0,0,0,0.10)</td><td>Dropdown menus, popovers</td></tr>
+          <tr><td><span class="tok">shadow-xl</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--n700)">0 20px 30px rgba(0,0,0,0.10)</td><td>Modals, dialogs</td></tr>
+          <tr><td><span class="tok">shadow-xxl</span></td><td style="font-family:var(--fm);font-size:11px;color:var(--n700)">0 30px 60px rgba(0,0,0,0.14)</td><td>Top-layer overlays only</td></tr>
         </tbody>
       </table>
     </div>
@@ -487,409 +367,273 @@ body{font-family:var(--ff);color:var(--neutral-900);background:transparent;line-
     <!-- BUTTONS -->
     <div class="page" id="page-buttons">
       <div class="page-title">Buttons</div>
-      <div class="page-desc">Buttons communicate action. Use the variant that matches the weight of the action — Primary for the dominant action in any given view, Secondary for alternatives, Ghost for low-emphasis. Never use more than one Primary button per section.</div>
-
-      <div class="section-title">Variants</div>
-      <div class="demo-block">
-        <div class="demo-label">All variants</div>
-        <button class="btn btn-primary">Primary</button>
-        <button class="btn btn-secondary">Secondary</button>
-        <button class="btn btn-ghost">Ghost</button>
-        <button class="btn btn-danger">Danger</button>
-      </div>
-
-      <div class="section-title">Sizes</div>
-      <div class="demo-block">
-        <div class="demo-label">Small / Default / Large</div>
-        <button class="btn btn-primary btn-sm">Small</button>
-        <button class="btn btn-primary">Default</button>
-        <button class="btn btn-primary btn-lg">Large</button>
-      </div>
-
-      <div class="section-title">States</div>
-      <div class="demo-block">
-        <div class="demo-label">Default / Disabled</div>
-        <button class="btn btn-primary">Enabled</button>
-        <button class="btn btn-primary btn-disabled" disabled>Disabled</button>
-        <button class="btn btn-secondary">Enabled</button>
-        <button class="btn btn-secondary btn-disabled" disabled>Disabled</button>
-      </div>
-
-      <div class="section-title">Dark / Light mode toggle</div>
-      <div class="demo-block">
-        <div class="demo-label">Contextual mode buttons</div>
-        <button class="btn" style="background:#fff;color:#202944;border-color:var(--neutral-300)">☀ Light</button>
-        <button class="btn" style="background:#202944;color:#fff;border-color:#202944">◐ Dark</button>
-      </div>
-
-      <div class="callout callout-warn" style="margin-top:1.5rem">
-        <strong>Do:</strong> Lead with icon + label on primary actions. <strong>Don't:</strong> Use a Primary button for destructive actions — use Danger instead. Never disable a button without providing an explanation nearby.
-      </div>
+      <div class="page-desc">Buttons communicate action. Never use more than one Primary button per section. Use Danger only for destructive, irreversible actions.</div>
+      <div class="sec">Variants</div>
+      <div class="demo"><div class="demo-lbl">All variants</div><button class="btn btn-p">Primary</button><button class="btn btn-s">Secondary</button><button class="btn btn-g">Ghost</button><button class="btn btn-d">Danger</button></div>
+      <div class="sec">Sizes</div>
+      <div class="demo"><div class="demo-lbl">Small / Default / Large</div><button class="btn btn-p btn-sm">Small</button><button class="btn btn-p">Default</button><button class="btn btn-p btn-lg">Large</button></div>
+      <div class="sec">States</div>
+      <div class="demo"><div class="demo-lbl">Enabled vs disabled</div><button class="btn btn-p">Enabled</button><button class="btn btn-p" disabled>Disabled</button><button class="btn btn-s">Enabled</button><button class="btn btn-s" disabled>Disabled</button></div>
+      <div class="sec">Dark / Light mode toggle</div>
+      <div class="demo"><button class="btn" style="background:#fff;color:#202944;border-color:var(--n300)">☀ Light</button><button class="btn" style="background:#202944;color:#fff;border-color:#202944">◐ Dark</button></div>
     </div>
 
     <!-- INPUTS -->
     <div class="page" id="page-inputs">
       <div class="page-title">Inputs & Forms</div>
-      <div class="page-desc">Form controls in the Aigent system include text inputs, search fields, password fields, dropdowns, checkboxes, radio buttons, toggles, and date pickers. All controls share a common height of 36px at default size.</div>
-
-      <div class="section-title">Text inputs</div>
-      <div class="demo-block" style="gap:16px;align-items:flex-start">
-        <div class="field-group"><span class="field-label">Label</span><input class="input-demo" placeholder="Input text here" /></div>
-        <div class="field-group"><span class="field-label">Focused</span><input class="input-demo" style="border-color:var(--brand);box-shadow:0 0 0 3px rgba(0,102,255,0.12)" placeholder="Focused state" /></div>
-        <div class="field-group"><span class="field-label">Label</span><input class="input-demo input-error" value="Input text here" /><div class="hint-err">⚠ Hint</div></div>
-        <div class="field-group"><span class="field-label">Label</span><input class="input-demo input-warn" value="Input text here" /><div class="hint-warn">⚠ Hint</div></div>
-        <div class="field-group"><span class="field-label" style="opacity:0.4">Label</span><input class="input-demo input-disabled" disabled placeholder="Disabled" /></div>
+      <div class="page-desc">Form controls share a common height of 36px. All controls have default, focused, error, warning, and disabled states.</div>
+      <div class="sec">Text inputs</div>
+      <div class="demo" style="gap:16px;align-items:flex-start">
+        <div class="field"><span class="flbl">Default</span><input class="inp" placeholder="Input text here"></div>
+        <div class="field"><span class="flbl">Focused</span><input class="inp" style="border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,102,255,0.1)" value="Focused"></div>
+        <div class="field"><span class="flbl">Error</span><input class="inp" style="border-color:var(--err)" value="Input text here"><div class="hint-e">⚠ Hint message</div></div>
+        <div class="field"><span class="flbl">Warning</span><input class="inp" style="border-color:#FFCC00" value="Input text here"><div class="hint-w">⚠ Hint message</div></div>
+        <div class="field"><span class="flbl" style="opacity:0.5">Disabled</span><input class="inp" disabled placeholder="Disabled"></div>
       </div>
-
-      <div class="section-title">Search</div>
-      <div class="demo-block">
-        <div style="display:flex;align-items:center;border:1px solid var(--neutral-300);border-radius:var(--radius);overflow:hidden;background:white">
-          <i class="ti ti-search" style="padding:0 8px;color:var(--neutral-500);font-size:16px"></i>
-          <input style="border:none;padding:7px 8px 7px 0;font-size:13px;outline:none;background:transparent;font-family:var(--ff);color:var(--neutral-800);width:160px" placeholder="Search...">
-          <button class="btn btn-primary btn-sm" style="border-radius:0;border:none;height:100%">Search</button>
-        </div>
-        <div style="display:flex;align-items:center;border:1px solid var(--neutral-300);border-radius:var(--radius);overflow:hidden;background:var(--neutral-100);opacity:0.5">
-          <i class="ti ti-search" style="padding:0 8px;color:var(--neutral-500);font-size:16px"></i>
-          <input style="border:none;padding:7px 8px 7px 0;font-size:13px;outline:none;background:transparent;font-family:var(--ff);width:140px" placeholder="Disabled..." disabled>
-          <button class="btn btn-ghost btn-sm" style="border-radius:0;border:none" disabled>Search</button>
+      <div class="sec">Search</div>
+      <div class="demo">
+        <div style="display:flex;align-items:center;border:1px solid var(--n300);border-radius:var(--r);overflow:hidden;background:white">
+          <svg style="margin:0 8px;flex-shrink:0;color:var(--n600)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input style="border:none;padding:7px 6px 7px 0;font-size:13px;outline:none;background:transparent;font-family:var(--ff);color:var(--n800);width:140px" placeholder="Search...">
+          <button class="btn btn-p btn-sm" style="border-radius:0;border:none;height:36px">Search</button>
         </div>
       </div>
-
-      <div class="section-title">Password field</div>
-      <div class="demo-block" style="align-items:flex-start;gap:16px">
-        <div class="field-group">
-          <span class="field-label">Enter New Password</span>
-          <div style="position:relative;display:inline-block">
-            <input type="password" class="input-demo" value="SuperSecure123" style="padding-right:32px">
-            <i class="ti ti-eye" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--neutral-500);cursor:pointer"></i>
-          </div>
-        </div>
+      <div class="sec">Password field</div>
+      <div class="demo" style="align-items:flex-start">
+        <div class="field"><span class="flbl">Enter New Password</span><div style="position:relative;display:inline-block"><input type="password" class="inp" value="SuperSecure123" style="padding-right:34px"><svg style="position:absolute;right:8px;top:50%;transform:translateY(-50%);color:var(--n600);cursor:pointer" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
       </div>
-
-      <div class="section-title">Dropdown</div>
-      <div class="demo-block" style="align-items:flex-start">
-        <div class="field-group">
-          <span class="field-label">Label</span>
-          <div class="dropdown-demo">
-            <div class="dropdown-trigger" id="dd1" onclick="toggleDD('dd-menu1','dd1')">Dropdown... <i class="ti ti-chevron-down" style="font-size:12px"></i></div>
-            <div class="dropdown-menu" id="dd-menu1">
-              <div class="dropdown-item">Option A</div>
-              <div class="dropdown-item">Option B</div>
-              <div class="dropdown-item">Option C</div>
-            </div>
-          </div>
-        </div>
-        <div class="field-group"><span class="field-label" style="opacity:0.4">Disabled</span><div class="dropdown-trigger" style="opacity:0.4;cursor:not-allowed">Dropdown... <i class="ti ti-chevron-up" style="font-size:12px"></i></div></div>
+      <div class="sec">Dropdown</div>
+      <div class="demo" style="align-items:flex-start">
+        <div class="field"><span class="flbl">Label</span><div class="dd"><div class="dd-tr" id="ddt" onclick="toggleDD()">Dropdown... <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div><div class="dd-menu" id="ddm"><div class="dd-item">Option A</div><div class="dd-item">Option B</div><div class="dd-item">Option C</div></div></div></div>
+        <div class="field"><span class="flbl" style="opacity:0.5">Disabled</span><div class="dd-tr" style="opacity:0.4;cursor:not-allowed">Dropdown... <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
       </div>
-
-      <div class="section-title">Checkbox</div>
-      <div class="demo-block" style="flex-direction:column;align-items:flex-start;gap:8px">
-        <label class="check-item"><input type="checkbox"> Label</label>
-        <label class="check-item"><input type="checkbox" checked> Label (checked)</label>
-        <label class="check-item"><input type="checkbox" disabled> Label (disabled)</label>
-        <label class="check-item"><input type="checkbox" checked disabled> Label (checked + disabled)</label>
+      <div class="sec">Checkbox</div>
+      <div class="demo" style="flex-direction:column;align-items:flex-start;gap:8px">
+        <label class="chk"><input type="checkbox"> Label</label>
+        <label class="chk"><input type="checkbox" checked> Label (checked)</label>
+        <label class="chk"><input type="checkbox" disabled> Label (disabled)</label>
+        <label class="chk"><input type="checkbox" checked disabled> Label (checked + disabled)</label>
       </div>
-
-      <div class="section-title">Radio button</div>
-      <div class="demo-block" style="flex-direction:column;align-items:flex-start;gap:8px">
-        <label class="radio-item"><input type="radio" name="r1" checked> Option A</label>
-        <label class="radio-item"><input type="radio" name="r1"> Option B</label>
-        <label class="radio-item"><input type="radio" name="r1" disabled> Disabled option</label>
+      <div class="sec">Radio button</div>
+      <div class="demo" style="flex-direction:column;align-items:flex-start;gap:8px">
+        <label class="chk"><input type="radio" name="r1" checked> Option A</label>
+        <label class="chk"><input type="radio" name="r1"> Option B</label>
+        <label class="chk"><input type="radio" name="r1" disabled> Disabled option</label>
       </div>
-
-      <div class="section-title">Toggle switch</div>
-      <div class="demo-block" style="flex-direction:column;align-items:flex-start;gap:10px">
-        <div class="toggle-row"><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>On</div>
-        <div class="toggle-row"><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>Off</div>
-        <div class="toggle-row"><label class="toggle"><input type="checkbox" disabled><span class="toggle-slider" style="opacity:0.4"></span></label><span style="opacity:0.4">Disabled</span></div>
+      <div class="sec">Toggle switch</div>
+      <div class="demo" style="flex-direction:column;align-items:flex-start;gap:10px">
+        <div class="tgl-row"><label class="tgl"><input type="checkbox" checked><span class="tgl-sl"></span></label> On</div>
+        <div class="tgl-row"><label class="tgl"><input type="checkbox"><span class="tgl-sl"></span></label> Off</div>
+        <div class="tgl-row"><label class="tgl"><input type="checkbox" disabled><span class="tgl-sl" style="opacity:0.4"></span></label><span style="opacity:0.4">Disabled</span></div>
       </div>
     </div>
 
     <!-- FEEDBACK -->
     <div class="page" id="page-feedback">
       <div class="page-title">Alerts & Labels</div>
-      <div class="page-desc">Alerts communicate system-level feedback. Labels (badges) tag content states. Both follow the semantic color system — never use color arbitrarily in feedback components.</div>
-
-      <div class="section-title">Alert variants</div>
-      <div class="alert alert-info"><i class="ti ti-info-circle" style="font-size:16px;flex-shrink:0"></i><div><strong>Info:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="alert-close" aria-label="Close">×</button></div>
-      <div class="alert alert-success"><i class="ti ti-circle-check" style="font-size:16px;flex-shrink:0"></i><div><strong>Success:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="alert-close" aria-label="Close">×</button></div>
-      <div class="alert alert-warning"><i class="ti ti-alert-triangle" style="font-size:16px;flex-shrink:0"></i><div><strong>Warning:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="alert-close" aria-label="Close">×</button></div>
-      <div class="alert alert-error"><i class="ti ti-circle-x" style="font-size:16px;flex-shrink:0"></i><div><strong>Error:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="alert-close" aria-label="Close">×</button></div>
-
-      <div class="section-title">Alert with actions (v2.1)</div>
-      <div class="alert alert-warning" style="flex-wrap:wrap;gap:8px">
-        <i class="ti ti-alert-triangle" style="font-size:16px;flex-shrink:0"></i>
-        <div style="flex:1">Alert title — action required to proceed.</div>
-        <div style="display:flex;gap:6px;margin-left:auto">
-          <button class="btn btn-ghost btn-sm">Action 2</button>
-          <button class="btn btn-primary btn-sm">Action 1</button>
-        </div>
-        <button class="alert-close" aria-label="Close">×</button>
-      </div>
-
-      <div class="section-title">Labels / Badges</div>
-      <div class="demo-block">
-        <span class="badge badge-primary">Primary</span>
-        <span class="badge badge-success">Success</span>
-        <span class="badge badge-warning">Warning</span>
-        <span class="badge badge-error">Error</span>
-        <span class="badge badge-neutral">Neutral</span>
-      </div>
-
-      <div class="section-title">No data state</div>
-      <div class="demo-block" style="justify-content:center;padding:1.5rem">
-        <div style="display:flex;align-items:center;gap:10px;color:var(--neutral-600);font-size:13px">
-          <i class="ti ti-alert-circle" style="font-size:20px;color:#FADC63"></i>
-          No data available
-        </div>
-      </div>
-
-      <div class="callout callout-warn">
-        <strong>v2.1 change:</strong> Action buttons in alerts now align vertically centered with icon and body text. Primary action moved to the right. Added spacing between buttons to reduce mis-tap risk.
-      </div>
+      <div class="page-desc">Alerts communicate system-level feedback. Labels tag content states. Both strictly follow the semantic color system — never use color arbitrarily.</div>
+      <div class="sec">Alert variants</div>
+      <div class="alert a-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><div><strong>Info:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
+      <div class="alert a-s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><div><strong>Success:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
+      <div class="alert a-w"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div><strong>Warning:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
+      <div class="alert a-e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><div><strong>Error:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
+      <div class="sec">Alert with actions (v2.1)</div>
+      <div class="alert a-w" style="flex-wrap:wrap;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div style="flex:1">Alert title — action is required to continue.</div><div style="display:flex;gap:6px;margin-left:auto"><button class="btn btn-g btn-sm">Action 2</button><button class="btn btn-p btn-sm">Action 1</button></div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
+      <div class="sec">Labels / Badges</div>
+      <div class="demo"><span class="badge b-p">Primary</span><span class="badge b-s">Success</span><span class="badge b-w">Warning</span><span class="badge b-e">Error</span><span class="badge b-n">Neutral</span></div>
+      <div class="sec">No data state</div>
+      <div class="demo" style="justify-content:center;padding:1.5rem"><div style="display:flex;align-items:center;gap:10px;color:var(--n600);font-size:13px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FADC63" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>No data available</div></div>
+      <div class="callout cw"><strong>v2.1 change:</strong> Action buttons now align vertically centered. Primary action moved right. Spacing increased to reduce mis-tap risk.</div>
     </div>
 
     <!-- NAVIGATION -->
     <div class="page" id="page-navigation">
       <div class="page-title">Navigation</div>
-      <div class="page-desc">Navigation components cover breadcrumbs, pagination, tabs, links, and the transcription menu. All navigation elements use Primary/500 (#0066FF) for active and interactive states.</div>
-
-      <div class="section-title">Breadcrumbs (v1.1)</div>
-      <div class="demo-block" style="flex-direction:column;align-items:flex-start;gap:10px">
-        <div class="breadcrumb"><a href="#">Home</a><span class="bc-sep">▶</span><a href="#">Section</a><span class="bc-sep">▶</span><a href="#">Subsection</a><span class="bc-sep">▶</span><span>Current page</span></div>
-        <div class="breadcrumb"><a href="#" class="visited">Home</a><span class="bc-sep">▶</span><a href="#">Section</a><span class="bc-sep">▶</span><span>Current page</span></div>
+      <div class="page-desc">All navigation elements use Primary/500 (#0066FF) for active and interactive states. Visited states use Secondary/500 (#574FBF).</div>
+      <div class="sec">Breadcrumbs (v1.1)</div>
+      <div class="demo" style="flex-direction:column;align-items:flex-start;gap:10px">
+        <div class="bc"><a href="#">Home</a><span class="bc-sep">▶</span><a href="#">Section</a><span class="bc-sep">▶</span><a href="#">Subsection</a><span class="bc-sep">▶</span><span>Current page</span></div>
+        <div class="bc"><a href="#" class="vis">Home</a><span class="bc-sep">▶</span><a href="#">Section</a><span class="bc-sep">▶</span><span>Current page</span></div>
       </div>
-
-      <div class="section-title">Pagination</div>
-      <div class="demo-block" style="flex-direction:column;align-items:flex-start;gap:12px">
-        <div class="pag">
-          <div class="pag-btn">◀</div>
-          <div class="pag-btn">1</div>
-          <div class="pag-btn active">2</div>
-          <div class="pag-btn">3</div>
-          <div class="pag-btn" style="letter-spacing:2px">···</div>
-          <div class="pag-btn">8</div>
-          <div class="pag-btn">9</div>
-          <div class="pag-btn">10</div>
-          <div class="pag-btn">▶</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--neutral-700)">
-          Go to page <input style="width:44px;padding:4px 8px;border:1px solid var(--neutral-300);border-radius:var(--radius);font-size:12px;text-align:center" placeholder="10">
-        </div>
+      <div class="callout"><strong>v1.1:</strong> Label copy standardized to generic "Label". Visited state uses Secondary/500 to distinguish from unvisited links.</div>
+      <div class="sec">Pagination</div>
+      <div class="demo" style="flex-direction:column;align-items:flex-start;gap:12px">
+        <div class="pag"><div class="pb">◀</div><div class="pb">1</div><div class="pb act">2</div><div class="pb">3</div><div class="pb" style="letter-spacing:2px">···</div><div class="pb">8</div><div class="pb">9</div><div class="pb">10</div><div class="pb">▶</div></div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--n700)">Go to page <input style="width:44px;padding:4px 8px;border:1px solid var(--n300);border-radius:var(--r);font-size:12px;text-align:center" placeholder="10"></div>
       </div>
-
-      <div class="section-title">Tabs</div>
-      <div class="demo-block" style="flex-direction:column;align-items:flex-start;gap:0;padding:0">
-        <div class="tab-bar" style="width:100%;margin-bottom:0">
-          <div class="tab active" onclick="switchTab(this,'tc1')"><i class="ti ti-pencil" style="font-size:13px;margin-right:4px"></i>Label</div>
-          <div class="tab" onclick="switchTab(this,'tc2')"><i class="ti ti-pencil" style="font-size:13px;margin-right:4px"></i>Label</div>
-          <div class="tab" onclick="switchTab(this,'tc3')"><i class="ti ti-pencil" style="font-size:13px;margin-right:4px"></i>Label</div>
+      <div class="sec">Tabs</div>
+      <div style="border:1px solid var(--n300);border-radius:var(--rl);overflow:hidden;margin:0.75rem 0">
+        <div class="tab-bar" style="padding:0 1rem;background:var(--n50)">
+          <div class="tab act" onclick="switchTab(this,'tc1')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;vertical-align:middle"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Label
+          </div>
+          <div class="tab" onclick="switchTab(this,'tc2')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;vertical-align:middle"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Label
+          </div>
+          <div class="tab" onclick="switchTab(this,'tc3')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;vertical-align:middle"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Label
+          </div>
         </div>
-        <div style="padding:1rem;width:100%">
-          <div id="tc1" class="tab-content active" style="font-size:13px;color:var(--neutral-700)">Tab 1 content</div>
-          <div id="tc2" class="tab-content" style="font-size:13px;color:var(--neutral-700)">Tab 2 content</div>
-          <div id="tc3" class="tab-content" style="font-size:13px;color:var(--neutral-700)">Tab 3 content</div>
-        </div>
+        <div id="tc1" class="tab-content act">Tab 1 content area</div>
+        <div id="tc2" class="tab-content">Tab 2 content area</div>
+        <div id="tc3" class="tab-content">Tab 3 content area</div>
       </div>
-
-      <div class="section-title">Links</div>
-      <div class="demo-block" style="flex-direction:column;align-items:flex-start;gap:8px">
-        <a href="#" class="link">Default link</a>
-        <a href="#" class="link" style="text-decoration:underline">Hover / underline state</a>
-        <a href="#" class="link visited">Visited link</a>
-        <a href="#" class="link bold-link">Bold / emphasized link</a>
-      </div>
-
-      <div class="callout">
-        <strong>Breadcrumb v1.1:</strong> Changed label copy to generic "Label" from example-specific names. Visited state now uses Secondary/500 (#574FBF) to distinguish from unvisited links.
+      <div class="sec">Links</div>
+      <div class="demo" style="flex-direction:column;align-items:flex-start;gap:8px">
+        <a href="#" class="lnk">Default link</a>
+        <a href="#" class="lnk" style="text-decoration:underline">Hover / underline state</a>
+        <a href="#" class="lnk vis">Visited link</a>
+        <a href="#" class="lnk bld">Bold / emphasized link</a>
       </div>
     </div>
 
     <!-- OVERLAY -->
     <div class="page" id="page-overlay">
       <div class="page-title">Modals & Overlays</div>
-      <div class="page-desc">Modals interrupt the user's flow for high-priority actions. Use them sparingly — only for confirmations, destructive actions, or tasks that can't be completed inline.</div>
-
-      <div class="section-title">Alert modal (v2.1)</div>
-      <div style="background:rgba(0,0,0,0.35);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:center;justify-content:center;min-height:200px">
-        <div style="background:white;border-radius:var(--radius-lg);padding:1.5rem;width:340px;box-shadow:0 20px 40px rgba(0,0,0,0.15)">
-          <div style="font-size:15px;font-weight:600;color:var(--neutral-900);margin-bottom:8px">Alert title</div>
-          <div style="font-size:13px;color:var(--neutral-600);line-height:1.5;margin-bottom:1.25rem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Action is required to continue.</div>
-          <div style="display:flex;gap:8px;justify-content:flex-end">
-            <button class="btn btn-ghost btn-sm">Cancel</button>
-            <button class="btn btn-primary btn-sm">Confirm</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-title">Delete confirmation</div>
-      <div style="background:rgba(0,0,0,0.35);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:center;justify-content:center;min-height:180px;margin-top:0.75rem">
-        <div style="background:white;border-radius:var(--radius-lg);padding:1.5rem;width:320px;box-shadow:0 20px 40px rgba(0,0,0,0.15)">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-            <i class="ti ti-alert-circle" style="font-size:20px;color:var(--err)"></i>
-            <div style="font-size:15px;font-weight:600;color:var(--neutral-900)">Delete item?</div>
-          </div>
-          <div style="font-size:13px;color:var(--neutral-600);line-height:1.5;margin-bottom:1.25rem">This action cannot be undone. All associated data will be permanently removed.</div>
-          <div style="display:flex;gap:8px;justify-content:flex-end">
-            <button class="btn btn-ghost btn-sm">Cancel</button>
-            <button class="btn btn-danger btn-sm">Delete</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-title">Change profile picture modal</div>
-      <div style="background:rgba(0,0,0,0.35);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:center;justify-content:center;min-height:200px;margin-top:0.75rem">
-        <div style="background:white;border-radius:var(--radius-lg);padding:1.5rem;width:300px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,0.15)">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--neutral-200);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center"><i class="ti ti-user" style="font-size:28px;color:var(--neutral-500)"></i></div>
-          <div style="font-size:15px;font-weight:600;margin-bottom:0.5rem">Add Profile Picture</div>
-          <div style="font-size:12px;color:var(--neutral-600);margin-bottom:1.25rem">Upload a photo to personalize your account.</div>
-          <button class="btn btn-primary" style="width:100%">Upload photo</button>
-        </div>
-      </div>
+      <div class="page-desc">Modals interrupt flow for high-priority actions only. Use sparingly — confirmations, destructive actions, or tasks that can't be completed inline.</div>
+      <div class="sec">Alert modal (v2.1)</div>
+      <div class="ov"><div class="modal" style="width:340px"><div style="font-size:15px;font-weight:600;margin-bottom:8px">Alert title</div><div style="font-size:13px;color:var(--n600);line-height:1.5;margin-bottom:1.25rem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Action is required to continue.</div><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn btn-g btn-sm">Cancel</button><button class="btn btn-p btn-sm">Confirm</button></div></div></div>
+      <div class="sec">Delete confirmation</div>
+      <div class="ov"><div class="modal" style="width:320px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E10412" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><div style="font-size:15px;font-weight:600">Delete item?</div></div><div style="font-size:13px;color:var(--n600);line-height:1.5;margin-bottom:1.25rem">This action cannot be undone. All associated data will be permanently removed.</div><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn btn-g btn-sm">Cancel</button><button class="btn btn-d btn-sm">Delete</button></div></div></div>
+      <div class="sec">Change profile picture</div>
+      <div class="ov"><div class="modal" style="width:300px;text-align:center"><div style="width:64px;height:64px;border-radius:50%;background:var(--n200);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9E9E9E" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div style="font-size:15px;font-weight:600;margin-bottom:0.5rem">Add Profile Picture</div><div style="font-size:12px;color:var(--n600);margin-bottom:1.25rem">Upload a photo to personalize your account.</div><button class="btn btn-p" style="width:100%">Upload photo</button></div></div>
     </div>
 
     <!-- DATA -->
     <div class="page" id="page-data">
       <div class="page-title">Data Display</div>
-      <div class="page-desc">Data components cover tables, loading indicators, audio scrubbers, and specialized views like the transcription menu and call summary. These components are central to the Aigent product's core value.</div>
-
-      <div class="section-title">Table (v1.0)</div>
-      <div style="overflow:hidden;border-radius:var(--radius-lg);border:1px solid var(--neutral-300)">
-        <table class="data-table" style="width:100%">
-          <thead><tr><th>Agent</th><th>Status</th><th>Call length</th><th>Score</th><th>Action</th></tr></thead>
-          <tbody>
-            <tr><td>Agent 001</td><td><span class="badge badge-success">Active</span></td><td>4m 12s</td><td>92</td><td><i class="ti ti-eye" style="color:var(--brand);cursor:pointer;font-size:16px"></i></td></tr>
-            <tr><td>Agent 002</td><td><span class="badge badge-warning">Paused</span></td><td>1m 30s</td><td>78</td><td><i class="ti ti-eye" style="color:var(--brand);cursor:pointer;font-size:16px"></i></td></tr>
-            <tr><td>Agent 003</td><td><span class="badge badge-error">Offline</span></td><td>—</td><td>—</td><td><i class="ti ti-eye" style="color:var(--neutral-400);font-size:16px"></i></td></tr>
-          </tbody>
-        </table>
+      <div class="page-desc">Data components are central to Aigent's core product value — covering tables, loading states, audio playback, and specialized transcription views.</div>
+      <div class="sec">Table (v1.0)</div>
+      <div style="overflow:hidden;border-radius:var(--rl);border:1px solid var(--n300)"><table class="dtbl" style="width:100%"><thead><tr><th>Agent</th><th>Status</th><th>Call length</th><th>Score</th><th>View</th></tr></thead><tbody><tr><td>Agent 001</td><td><span class="badge b-s">Active</span></td><td>4m 12s</td><td>92</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2" style="cursor:pointer"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></td></tr><tr><td>Agent 002</td><td><span class="badge b-w">Paused</span></td><td>1m 30s</td><td>78</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2" style="cursor:pointer"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></td></tr><tr><td>Agent 003</td><td><span class="badge b-e">Offline</span></td><td>—</td><td>—</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#CBCBCB" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></td></tr></tbody></table></div>
+      <div class="sec">Loading indicator</div>
+      <div class="demo" style="justify-content:center;gap:2.5rem">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spin"></div><span style="font-size:11px;color:var(--n600)">Frame 1</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spin" style="animation-delay:0.2s"></div><span style="font-size:11px;color:var(--n600)">Frame 2</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spin" style="animation-delay:0.4s"></div><span style="font-size:11px;color:var(--n600)">Frame 3</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spin" style="animation-delay:0.6s"></div><span style="font-size:11px;color:var(--n600)">Frame 4</span></div>
       </div>
-
-      <div class="section-title">Loading indicator</div>
-      <div class="demo-block" style="justify-content:center;gap:2rem">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spinner"></div><span style="font-size:11px;color:var(--neutral-600)">Frame 1</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spinner" style="animation-delay:0.2s"></div><span style="font-size:11px;color:var(--neutral-600)">Frame 2</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spinner" style="animation-delay:0.4s"></div><span style="font-size:11px;color:var(--neutral-600)">Frame 3</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spinner" style="animation-delay:0.6s"></div><span style="font-size:11px;color:var(--neutral-600)">Frame 4</span></div>
-      </div>
-
-      <div class="section-title">Audio scrubber</div>
-      <div class="demo-block" style="flex-direction:column">
-        <div style="display:flex;align-items:center;gap:12px;width:100%">
-          <span style="font-size:12px;color:var(--neutral-600);font-family:var(--fm);min-width:36px">2:04</span>
-          <input type="range" min="0" max="100" value="38" style="flex:1;accent-color:var(--neutral-900);height:4px" id="scrubber">
-          <span style="font-size:12px;color:var(--neutral-600);font-family:var(--fm);min-width:36px">5:22</span>
-        </div>
-      </div>
-
-      <div class="callout">
-        <strong>Transcription menu note.</strong> The menu component is specialized for the call review interface. It surfaces Call Keywords, Call Segments, Versions, Trigger Data, and Call Summary — rendered as structured cards within the same panel as the audio scrubber. This component should only be instantiated in transcription views.
-      </div>
+      <div class="sec">Audio scrubber</div>
+      <div class="demo"><div style="display:flex;align-items:center;gap:12px;width:100%"><span style="font-size:12px;color:var(--n600);font-family:var(--fm);min-width:36px">2:04</span><input type="range" min="0" max="100" value="38" style="flex:1;accent-color:var(--n900)"><span style="font-size:12px;color:var(--n600);font-family:var(--fm);min-width:36px">5:22</span></div></div>
+      <div class="callout">The Transcription Menu component is specialized for call review only. It surfaces Call Keywords, Call Segments, Versions, Trigger Data, and Call Summary. Only instantiate in transcription views.</div>
     </div>
 
     <!-- TOKENS -->
     <div class="page" id="page-tokens">
       <div class="page-title">Modern token architecture</div>
-      <div class="page-desc">This design system was built before design tokens were widely adopted. The section below maps existing decisions to what a W3C-compliant token layer would look like today — and how AI-assisted tooling would accelerate maintenance going forward.</div>
-
-      <div class="callout" style="margin-bottom:1.5rem">
-        <strong>Context.</strong> The original system uses hardcoded hex values and Figma styles — a valid approach in 2022. The token architecture below is a forward-looking translation into the W3C Design Tokens format, enabling multi-brand theming, dark mode, and AI-assisted component generation from a single source of truth.
-      </div>
-
-      <div class="section-title">Tier 1 — Primitive tokens (raw values)</div>
-      <table class="token-table">
+      <div class="page-desc">This system was built before design tokens were widely adopted. The section below maps existing decisions to a W3C-compliant two-tier token layer — showing what the system would look like if built today.</div>
+      <div class="callout"><strong>Context.</strong> The original system uses hardcoded hex values and Figma styles. A token layer enables multi-brand theming, dark mode, and AI-assisted component generation from a single source of truth.</div>
+      <div class="sec">Tier 1 — Primitive tokens</div>
+      <table class="ttbl">
         <thead><tr><th>Token name</th><th>Value</th><th>Category</th></tr></thead>
         <tbody>
-          <tr><td><span class="token-badge">color.primary.500</span></td><td><span class="color-dot" style="background:#0066FF"></span>#0066FF</td><td>Color / Brand</td></tr>
-          <tr><td><span class="token-badge">color.primary.700</span></td><td><span class="color-dot" style="background:#0254D2"></span>#0254D2</td><td>Color / Brand</td></tr>
-          <tr><td><span class="token-badge">color.neutral.900</span></td><td><span class="color-dot" style="background:#202944"></span>#202944</td><td>Color / Neutral</td></tr>
-          <tr><td><span class="token-badge">color.success.500</span></td><td><span class="color-dot" style="background:#06B95E"></span>#06B95E</td><td>Color / Semantic</td></tr>
-          <tr><td><span class="token-badge">color.error.500</span></td><td><span class="color-dot" style="background:#E10412"></span>#E10412</td><td>Color / Semantic</td></tr>
-          <tr><td><span class="token-badge">shadow.def</span></td><td style="font-family:var(--fm);font-size:11px">0 1px 3px rgba(0,0,0,0.12)</td><td>Elevation</td></tr>
-          <tr><td><span class="token-badge">radius.md</span></td><td style="font-family:var(--fm);font-size:11px">8px</td><td>Border radius</td></tr>
-          <tr><td><span class="token-badge">radius.lg</span></td><td style="font-family:var(--fm);font-size:11px">12px</td><td>Border radius</td></tr>
-          <tr><td><span class="token-badge">font.size.body</span></td><td style="font-family:var(--fm);font-size:11px">14px</td><td>Typography</td></tr>
+          <tr><td><span class="tok">color.primary.500</span></td><td><span class="cdot" style="background:#0066FF"></span>#0066FF</td><td>Color / Brand</td></tr>
+          <tr><td><span class="tok">color.primary.700</span></td><td><span class="cdot" style="background:#0254D2"></span>#0254D2</td><td>Color / Brand</td></tr>
+          <tr><td><span class="tok">color.neutral.900</span></td><td><span class="cdot" style="background:#202944"></span>#202944</td><td>Color / Neutral</td></tr>
+          <tr><td><span class="tok">color.success.500</span></td><td><span class="cdot" style="background:#06B95E"></span>#06B95E</td><td>Color / Semantic</td></tr>
+          <tr><td><span class="tok">color.error.500</span></td><td><span class="cdot" style="background:#E10412"></span>#E10412</td><td>Color / Semantic</td></tr>
+          <tr><td><span class="tok">shadow.def</span></td><td style="font-family:var(--fm);font-size:11px">0 1px 3px rgba(0,0,0,0.12)</td><td>Elevation</td></tr>
+          <tr><td><span class="tok">radius.md</span></td><td style="font-family:var(--fm);font-size:11px">8px</td><td>Border radius</td></tr>
+          <tr><td><span class="tok">font.size.body</span></td><td style="font-family:var(--fm);font-size:11px">14px</td><td>Typography</td></tr>
         </tbody>
       </table>
-
-      <div class="section-title">Tier 2 — Semantic tokens (intent-based)</div>
-      <table class="token-table">
+      <div class="sec">Tier 2 — Semantic tokens</div>
+      <table class="ttbl">
         <thead><tr><th>Token name</th><th>References</th><th>Usage</th></tr></thead>
         <tbody>
-          <tr><td><span class="token-badge">color.interactive.default</span></td><td><span class="token-badge">color.primary.500</span></td><td>All clickable elements at rest</td></tr>
-          <tr><td><span class="token-badge">color.interactive.hover</span></td><td><span class="token-badge">color.primary.700</span></td><td>Hover state for interactive elements</td></tr>
-          <tr><td><span class="token-badge">color.surface.default</span></td><td><span class="token-badge">color.neutral.50</span></td><td>Default page / card background</td></tr>
-          <tr><td><span class="token-badge">color.text.primary</span></td><td><span class="token-badge">color.neutral.900</span></td><td>Body and heading text</td></tr>
-          <tr><td><span class="token-badge">color.text.secondary</span></td><td><span class="token-badge">color.neutral.600</span></td><td>Supporting / muted text</td></tr>
-          <tr><td><span class="token-badge">color.feedback.success</span></td><td><span class="token-badge">color.success.500</span></td><td>Success alerts, confirmations</td></tr>
-          <tr><td><span class="token-badge">color.feedback.error</span></td><td><span class="token-badge">color.error.500</span></td><td>Error states, destructive actions</td></tr>
-          <tr><td><span class="token-badge">elevation.card</span></td><td><span class="token-badge">shadow.def</span></td><td>Default card elevation</td></tr>
-          <tr><td><span class="token-badge">elevation.modal</span></td><td><span class="token-badge">shadow.xl</span></td><td>Modal and dialog elevation</td></tr>
+          <tr><td><span class="tok">color.interactive.default</span></td><td><span class="tok">color.primary.500</span></td><td>All clickable elements at rest</td></tr>
+          <tr><td><span class="tok">color.interactive.hover</span></td><td><span class="tok">color.primary.700</span></td><td>Hover state for interactive elements</td></tr>
+          <tr><td><span class="tok">color.surface.default</span></td><td><span class="tok">color.neutral.50</span></td><td>Default page / card background</td></tr>
+          <tr><td><span class="tok">color.text.primary</span></td><td><span class="tok">color.neutral.900</span></td><td>Body and heading text</td></tr>
+          <tr><td><span class="tok">color.text.secondary</span></td><td><span class="tok">color.neutral.600</span></td><td>Supporting / muted text</td></tr>
+          <tr><td><span class="tok">color.feedback.success</span></td><td><span class="tok">color.success.500</span></td><td>Success alerts, confirmations</td></tr>
+          <tr><td><span class="tok">color.feedback.error</span></td><td><span class="tok">color.error.500</span></td><td>Error states, destructive actions</td></tr>
+          <tr><td><span class="tok">elevation.card</span></td><td><span class="tok">shadow.def</span></td><td>Default card elevation</td></tr>
+          <tr><td><span class="tok">elevation.modal</span></td><td><span class="tok">shadow.xl</span></td><td>Modal and dialog elevation</td></tr>
         </tbody>
       </table>
-
-      <div class="section-title">AI tooling integration</div>
+      <div class="sec">AI tooling integration</div>
       <div class="comp-grid" style="margin-top:0.5rem">
-        <div class="comp-card" style="border-left:3px solid var(--brand)">
-          <div class="comp-name">Token-to-component generation</div>
-          <div class="comp-desc">With semantic tokens in place, tools like GitHub Copilot or Claude can generate spec-accurate components by referencing token names rather than raw values — reducing design–dev drift.</div>
-        </div>
-        <div class="comp-card" style="border-left:3px solid var(--sec)">
-          <div class="comp-name">Multi-brand theming</div>
-          <div class="comp-desc">A token layer enables white-labeling: swap Tier 1 primitives per brand, semantic tokens stay constant. The Aigent system could support client-specific color schemes with zero component changes.</div>
-        </div>
-        <div class="comp-card" style="border-left:3px solid var(--ter)">
-          <div class="comp-name">Automated dark mode</div>
-          <div class="comp-desc">Semantic tokens like <span class="token-badge">color.surface.default</span> and <span class="token-badge">color.text.primary</span> map to mode-specific values automatically — dark mode becomes a config, not a rebuild.</div>
-        </div>
-        <div class="comp-card" style="border-left:3px solid #FADC63">
-          <div class="comp-name">Figma Variables migration</div>
-          <div class="comp-desc">This system would migrate directly to Figma Variables using the two-tier structure above. Primitive tokens become Variable collections; semantic tokens use aliasing — exactly the architecture Figma now supports natively.</div>
-        </div>
+        <div class="comp-card" style="border-left:3px solid var(--blue)"><div class="comp-name">Token-to-component generation</div><div class="comp-desc">AI tools can generate spec-accurate components by referencing token names — reducing design–dev drift.</div></div>
+        <div class="comp-card" style="border-left:3px solid var(--sec)"><div class="comp-name">Multi-brand theming</div><div class="comp-desc">Swap Tier 1 primitives per brand while semantic tokens stay constant. Zero component changes needed.</div></div>
+        <div class="comp-card" style="border-left:3px solid var(--ter)"><div class="comp-name">Automated dark mode</div><div class="comp-desc">Semantic tokens map to mode-specific values automatically — dark mode becomes a config, not a rebuild.</div></div>
+        <div class="comp-card" style="border-left:3px solid #FADC63"><div class="comp-name">Figma Variables migration</div><div class="comp-desc">Maps directly to Figma Variables: primitive tokens become Variable collections, semantic tokens use aliasing.</div></div>
       </div>
-
-      <div class="callout callout-warn" style="margin-top:1.5rem">
-        <strong>Migration path.</strong> To adopt this token architecture: (1) Export current Figma styles to JSON via Tokens Studio. (2) Restructure into primitive → semantic layers. (3) Sync back to Figma Variables. (4) Update component references from direct values to token aliases. Estimated effort: 2–3 days for a system of this scale.
-      </div>
+      <div class="callout cw" style="margin-top:1.5rem"><strong>Migration path.</strong> (1) Export Figma styles to JSON via Tokens Studio. (2) Restructure into primitive → semantic layers. (3) Sync back to Figma Variables. (4) Update component references to token aliases. Estimated: 2–3 days.</div>
     </div>
 
   </main>
 </div>
 
 <script>
-function nav(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  event.target.classList.add('active');
-}
-function toggleDD(menuId,triggerId){
-  var m=document.getElementById(menuId),t=document.getElementById(triggerId);
-  var open=m.classList.toggle('open');
-  t.classList.toggle('open',open);
-}
-function switchTab(el,contentId){
-  el.parentElement.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  var panel=el.closest('.demo-block');
-  panel.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-  document.getElementById(contentId).classList.add('active');
-}
-document.addEventListener('click',function(e){
-  if(!e.target.closest('.dropdown-demo')){
-    document.querySelectorAll('.dropdown-menu').forEach(m=>m.classList.remove('open'));
-    document.querySelectorAll('.dropdown-trigger').forEach(t=>t.classList.remove('open'));
-  }
+// Icons — fully inline SVG, no CDN dependency
+var icons=[
+  {name:'Profile',svg:'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'},
+  {name:'Log out',svg:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>'},
+  {name:'Camera',svg:'<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>'},
+  {name:'Help',svg:'<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>'},
+  {name:'Change',svg:'<polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>'},
+  {name:'Phone',svg:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 10.82a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>'},
+  {name:'Check',svg:'<polyline points="20 6 9 17 4 12"/>'},
+  {name:'Password',svg:'<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'},
+  {name:'Heartbeat',svg:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},
+  {name:'Pause',svg:'<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>'},
+  {name:'History',svg:'<polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/><polyline points="12 7 12 12 15 15"/>'},
+  {name:'Agent ID',svg:'<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>'},
+  {name:'Star',svg:'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>'},
+  {name:'Customer',svg:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'},
+  {name:'Calendar',svg:'<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'},
+  {name:'Location',svg:'<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'},
+  {name:'Search',svg:'<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>'},
+  {name:'Loading',svg:'<line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>'},
+  {name:'Edit',svg:'<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>'},
+  {name:'Email',svg:'<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>'},
+  {name:'Internet',svg:'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>'},
+  {name:'Desktop',svg:'<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>'},
+  {name:'Warning',svg:'<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>'},
+  {name:'Delete',svg:'<polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>'},
+  {name:'Copy',svg:'<rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>'},
+  {name:'Reports',svg:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'},
+  {name:'Visibility',svg:'<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'},
+  {name:'Robot',svg:'<rect x="3" y="11" width="18" height="10" rx="2"/><path d="M9 11V7a3 3 0 0 1 6 0v4"/><circle cx="9" cy="16" r="1" fill="currentColor"/><circle cx="15" cy="16" r="1" fill="currentColor"/>'}
+];
+var grid=document.getElementById('icon-grid');
+icons.forEach(function(ic){
+  var d=document.createElement('div');
+  d.className='icon-item';
+  d.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">'+ic.svg+'</svg><span class="icon-nm">'+ic.name+'</span>';
+  grid.appendChild(d);
 });
 
-var grid1=document.querySelector('.grid-vis');
-if(grid1){
-  var grids=document.querySelectorAll('.grid-vis');
-  grids.forEach(function(g){
-    if(g.children.length===0){
-      var n=g.dataset.cols||12;
-      for(var i=0;i<n;i++){var d=document.createElement('div');d.className='grid-col';g.appendChild(d);}
-    }
-  });
+// Grid columns
+[['gd',12],['gt',6],['gm',4]].forEach(function(g){
+  var el=document.getElementById(g[0]);
+  if(el){for(var i=0;i<g[1];i++){var d=document.createElement('div');d.className='gc';el.appendChild(d);}}
+});
+
+function nav(id,el){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});
+  document.getElementById('page-'+id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo(0,0);
 }
+function toggleDD(){
+  var m=document.getElementById('ddm'),t=document.getElementById('ddt');
+  var o=m.classList.toggle('open');
+  t.classList.toggle('open',o);
+}
+function switchTab(el,id){
+  el.parentElement.querySelectorAll('.tab').forEach(function(t){t.classList.remove('act')});
+  el.classList.add('act');
+  document.querySelectorAll('.tab-content').forEach(function(c){c.classList.remove('act')});
+  document.getElementById(id).classList.add('act');
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.dd')){
+    var m=document.getElementById('ddm'),t=document.getElementById('ddt');
+    if(m){m.classList.remove('open');t.classList.remove('open');}
+  }
+});
 </script>
+</body>
+</html>
