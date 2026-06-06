@@ -13,15 +13,13 @@
   --sec:#574FBF;--ter:#2FB88A;
   --n50:#F9F9F9;--n100:#F4F6FA;--n200:#F2F2F2;--n300:#E3E3E3;
   --n400:#CBCBCB;--n600:#9E9E9E;--n700:#787878;--n800:#535353;--n900:#202944;
-  --err:#E10412;--suc:#06B95E;
+  --err:#E10412;--suc:#06B95E;--warn:#FADC63;
   --r:8px;--rl:12px;
   --ff:'DM Sans',sans-serif;--fm:'DM Mono',monospace;
 }
 html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;line-height:1.6;font-size:14px}
 .layout{display:flex;min-height:100vh}
-
-/* Sidebar */
-.sidebar{width:200px;flex-shrink:0;border-right:1px solid var(--n300);background:var(--n50);position:sticky;top:0;height:100vh;overflow-y:auto}
+.sidebar{width:210px;flex-shrink:0;border-right:1px solid var(--n300);background:var(--n50);position:sticky;top:0;height:100vh;overflow-y:auto}
 .logo{padding:1.25rem 1rem 1rem;border-bottom:1px solid var(--n300);margin-bottom:0.5rem}
 .logo-name{font-size:16px;font-weight:600;color:var(--n900);letter-spacing:-0.3px}
 .logo-name span{color:var(--blue)}
@@ -30,15 +28,11 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
 .nav-item{display:block;padding:5px 1rem;font-size:13px;color:var(--n700);cursor:pointer;border-left:2px solid transparent;transition:all 0.12s;text-decoration:none}
 .nav-item:hover{color:var(--blue);background:var(--n200)}
 .nav-item.active{color:var(--blue);border-left-color:var(--blue);background:var(--n100);font-weight:500}
-
-/* Content */
-.content{flex:1;padding:2.5rem;max-width:900px;min-width:0}
+.content{flex:1;padding:2.5rem;max-width:920px;min-width:0}
 .page{display:none}.page.active{display:block}
 .page-title{font-size:24px;font-weight:600;color:var(--n900);margin-bottom:6px;letter-spacing:-0.5px}
 .page-desc{font-size:13px;color:var(--n700);margin-bottom:2rem;line-height:1.7;max-width:600px}
 .sec{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--n600);margin:2rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--n300)}
-
-/* Utilities */
 .tok{font-family:var(--fm);font-size:11px;background:var(--n100);border:1px solid var(--n300);border-radius:4px;padding:2px 6px;color:var(--n800);white-space:nowrap}
 .callout{background:#EEF4FF;border:1px solid #B5D4F4;border-radius:var(--rl);padding:1rem 1.25rem;margin:1.5rem 0;font-size:13px;color:#0C447C;line-height:1.6}
 .callout strong{font-weight:600}
@@ -50,38 +44,31 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
 .comp-card:hover{border-color:var(--blue)}
 .comp-name{font-size:13px;font-weight:600;color:var(--n900);margin-bottom:4px}
 .comp-desc{font-size:12px;color:var(--n600);line-height:1.5}
-
-/* Color swatches */
+/* swatches */
 .swatches{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
 .swatch{border-radius:var(--r);overflow:hidden;width:70px;flex-shrink:0;border:1px solid rgba(0,0,0,0.06)}
-.sw-c{height:44px;width:100%}
-.sw-i{padding:4px 5px;background:white}
-.sw-s{font-size:9px;color:var(--n600);font-family:var(--fm)}
-.sw-h{font-size:9px;color:var(--n800);font-family:var(--fm)}
-
-/* Type scale */
+.sw-c{height:44px;width:100%}.sw-i{padding:4px 5px;background:white}
+.sw-s{font-size:9px;color:var(--n600);font-family:var(--fm)}.sw-h{font-size:9px;color:var(--n800);font-family:var(--fm)}
+/* type */
 .type-row{display:flex;align-items:center;gap:1rem;padding:0.875rem 0;border-bottom:1px solid var(--n200)}
 .type-meta{width:140px;flex-shrink:0}
 .type-lbl{font-size:10px;font-weight:600;color:var(--n600);text-transform:uppercase;letter-spacing:0.5px}
 .type-toks{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
 .type-ex{flex:1;min-width:0}
-
-/* Grid */
+/* grid */
 .grid-card{background:var(--n100);border:1px solid var(--n300);border-radius:var(--rl);padding:1.25rem;margin-bottom:0.75rem}
 .grid-lbl{font-size:13px;font-weight:600;color:var(--n800);margin-bottom:4px}
 .grid-spec{font-size:12px;color:var(--n600);margin-bottom:0.75rem;line-height:1.8}
 .grid-vis{display:flex;gap:4px;height:32px}
 .gc{background:rgba(0,102,255,0.1);border:1px solid rgba(0,102,255,0.2);border-radius:3px;flex:1}
-
-/* Icon grid */
+/* icons */
 .icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px}
 .icon-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px;background:var(--n100);border-radius:var(--r);border:1px solid var(--n200)}
 .icon-item svg{width:22px;height:22px;color:var(--n900)}
 .icon-nm{font-size:10px;color:var(--n600);text-align:center;line-height:1.3;font-family:var(--fm)}
-
-/* Shadows */
+/* shadows */
 .sh-wrap{display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.5rem 0}
-.sh-card{background:white;border-radius:var(--rl);padding:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.sh-card{display:flex;flex-direction:column;align-items:center;gap:10px}
 .sh-box{width:110px;height:80px;border-radius:var(--r);background:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--fm);color:var(--n700);text-align:center}
 .sh-lbl{font-size:11px;color:var(--n600);text-align:center}
 .s0{box-shadow:0 1px 3px rgba(0,0,0,0.12),0 0 0 1px rgba(0,0,0,0.04)}
@@ -89,18 +76,17 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
 .s2{box-shadow:0 10px 20px rgba(0,0,0,0.10),0 4px 6px rgba(0,0,0,0.06)}
 .s3{box-shadow:0 20px 30px rgba(0,0,0,0.10),0 8px 12px rgba(0,0,0,0.06)}
 .s4{box-shadow:0 30px 60px rgba(0,0,0,0.14),0 10px 20px rgba(0,0,0,0.08)}
-
-/* Buttons */
+/* buttons */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:var(--r);font-size:13px;font-weight:500;cursor:pointer;border:1px solid transparent;font-family:var(--ff);transition:all 0.15s;line-height:1}
 .btn-p{background:var(--blue);color:white;border-color:var(--blue)}.btn-p:hover{background:var(--blue-d)}
 .btn-s{background:white;color:var(--blue);border-color:var(--blue)}.btn-s:hover{background:#EEF4FF}
 .btn-g{background:transparent;color:var(--n700);border-color:var(--n300)}.btn-g:hover{background:var(--n200)}
 .btn-d{background:var(--err);color:white;border-color:var(--err)}
+.btn-ds{background:white;color:var(--err);border-color:var(--err)}
 .btn-sm{padding:4px 10px;font-size:12px}
 .btn-lg{padding:10px 22px;font-size:15px}
 .btn:disabled{opacity:0.4;cursor:not-allowed}
-
-/* Inputs */
+/* inputs */
 .inp{padding:7px 10px;border:1px solid var(--n300);border-radius:var(--r);font-size:13px;background:white;font-family:var(--ff);color:var(--n900);outline:none;width:160px}
 .inp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,102,255,0.1)}
 .inp:disabled{opacity:0.4;background:var(--n100)}
@@ -108,17 +94,20 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
 .flbl{font-size:12px;font-weight:500;color:var(--n800)}
 .hint-e{font-size:11px;color:var(--err);margin-top:2px}
 .hint-w{font-size:11px;color:#9A6F00;margin-top:2px}
-
-/* Toggle */
-.tgl{position:relative;width:44px;height:24px;flex-shrink:0;cursor:pointer}
+/* toggle */
+.tgl{position:relative;width:60px;height:28px;flex-shrink:0;cursor:pointer}
 .tgl input{opacity:0;width:0;height:0;position:absolute}
-.tgl-sl{position:absolute;top:0;left:0;right:0;bottom:0;background:var(--n400);border-radius:12px;transition:0.2s}
-.tgl-sl:before{position:absolute;content:'';width:18px;height:18px;left:3px;top:3px;background:white;border-radius:50%;transition:0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
+.tgl-sl{position:absolute;top:0;left:0;right:0;bottom:0;background:var(--n400);border-radius:14px;transition:0.2s;display:flex;align-items:center}
+.tgl-sl:before{position:absolute;content:'';width:22px;height:22px;left:3px;top:3px;background:white;border-radius:50%;transition:0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
 .tgl input:checked+.tgl-sl{background:var(--blue)}
-.tgl input:checked+.tgl-sl:before{transform:translateX(20px)}
+.tgl input:checked+.tgl-sl:before{transform:translateX(32px)}
+.tgl-lbl{font-size:12px;font-weight:500;color:white;position:absolute;top:50%;transform:translateY(-50%);pointer-events:none}
+.tgl-lbl.on{left:8px}
+.tgl-lbl.off{right:8px;color:var(--n900)}
+.tgl input:checked~.tgl-lbl.off{display:none}
+.tgl input:not(:checked)~.tgl-lbl.on{display:none}
 .tgl-row{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--n800)}
-
-/* Dropdown */
+/* dropdown */
 .dd{position:relative;display:inline-block}
 .dd-tr{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:7px 10px;border:1px solid var(--n300);border-radius:var(--r);font-size:13px;background:white;cursor:pointer;color:var(--n800);font-family:var(--ff);width:160px}
 .dd-tr.open{border-color:var(--blue)}
@@ -126,69 +115,123 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
 .dd-menu.open{display:block}
 .dd-item{padding:7px 10px;font-size:13px;border-radius:4px;cursor:pointer;color:var(--n800)}
 .dd-item:hover{background:var(--n100)}
-
-/* Checkbox / Radio */
+/* checkbox / radio */
 .chk{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--n800);cursor:pointer}
 .chk input{width:15px;height:15px;accent-color:var(--blue);cursor:pointer}
-
-/* Alert */
-.alert{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border-radius:var(--r);font-size:13px;margin:4px 0;line-height:1.5}
-.a-i{background:#EEF4FF;border:1px solid #B5D4F4;color:#0C447C}
+/* alerts */
+.alert{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:var(--r);font-size:13px;margin:6px 0;line-height:1.5}
+.a-i{background:#F5F5F5;border:1px solid var(--n300);color:var(--n900)}
 .a-s{background:#EAFFF5;border:1px solid #9FE1CB;color:#085041}
-.a-w{background:#FFF9E6;border:1px solid #FAC775;color:#633806}
+.a-w{background:#FFFBE6;border:1px solid #FAC775;color:#633806}
 .a-e{background:#FFF0F0;border:1px solid #F7C1C1;color:#791F1F}
 .a-cls{margin-left:auto;cursor:pointer;opacity:0.6;background:none;border:none;font-size:18px;line-height:1;color:inherit;padding:0 0 0 8px;flex-shrink:0}
-
-/* Badge */
+/* badge */
 .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500}
 .b-p{background:#EEF4FF;color:var(--blue-d)}
 .b-s{background:#EAFFF5;color:#085041}
 .b-w{background:#FFF9E6;color:#633806}
 .b-e{background:#FFF0F0;color:#791F1F}
 .b-n{background:var(--n100);color:var(--n700);border:1px solid var(--n300)}
-
-/* Pagination */
-.pag{display:flex;gap:4px;align-items:center}
-.pb{width:32px;height:32px;border-radius:var(--r);border:1px solid var(--n300);background:white;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;color:var(--n700)}
+/* pagination */
+.pag{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.pb{min-width:32px;height:32px;padding:0 8px;border-radius:var(--r);border:1px solid var(--n300);background:white;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;color:var(--n700)}
 .pb.act{background:var(--blue);color:white;border-color:var(--blue)}
 .pb:hover:not(.act){background:var(--n100)}
-
-/* Breadcrumb */
+/* breadcrumb */
 .bc{display:flex;align-items:center;gap:5px;font-size:13px;color:var(--n600);flex-wrap:wrap}
 .bc a{color:var(--blue);text-decoration:none}.bc a:hover{text-decoration:underline}
 .bc a.vis{color:var(--sec)}
 .bc-sep{color:var(--n400);font-size:10px}
-
-/* Spinner */
+/* spinner */
 .spin{width:22px;height:22px;border:2.5px solid var(--n200);border-top-color:var(--n800);border-radius:50%;animation:sp 0.8s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
-
-/* Tabs */
+/* tabs */
 .tab-bar{display:flex;border-bottom:1px solid var(--n300)}
-.tab{padding:8px 14px;font-size:13px;font-weight:500;color:var(--n600);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.15s}
+.tab{padding:8px 14px;font-size:13px;font-weight:500;color:var(--n600);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.15s;display:flex;align-items:center;gap:5px}
 .tab.act{color:var(--blue);border-bottom-color:var(--blue)}
 .tab-content{display:none;padding:1rem;font-size:13px;color:var(--n700)}.tab-content.act{display:block}
-
-/* Token table */
+/* token table */
 .ttbl{width:100%;border-collapse:collapse;font-size:12px}
 .ttbl th{text-align:left;padding:8px 12px;background:var(--n100);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--n600);border-bottom:1px solid var(--n300)}
 .ttbl td{padding:9px 12px;border-bottom:1px solid var(--n200);vertical-align:middle}
 .ttbl tr:last-child td{border-bottom:none}
-.cdot{width:13px;height:13px;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;border:1px solid rgba(0,0,0,0.08);flex-shrink:0}
-
-/* Data table */
+.cdot{width:13px;height:13px;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;border:1px solid rgba(0,0,0,0.08)}
+/* data table */
 .dtbl{width:100%;border-collapse:collapse;font-size:13px}
 .dtbl th{text-align:left;padding:9px 12px;background:var(--n900);color:white;font-size:12px;font-weight:500}
 .dtbl td{padding:8px 12px;border-bottom:1px solid var(--n200)}
 .dtbl tr:hover td{background:var(--n50)}
-
-/* Modal overlay */
+/* modal */
 .ov{background:rgba(0,0,0,0.35);border-radius:var(--rl);padding:2rem;display:flex;align-items:center;justify-content:center;min-height:200px;margin:0.75rem 0}
 .modal{background:white;border-radius:var(--rl);padding:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,0.15)}
-
-/* Link */
+/* link */
 .lnk{color:var(--blue);text-decoration:none;font-size:13px}.lnk:hover{text-decoration:underline}
 .lnk.vis{color:var(--sec)}.lnk.bld{font-weight:600}
+/* option pill */
+.option-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--r);font-size:13px;font-weight:500;cursor:pointer;border:1px solid var(--n300);background:white;color:var(--n900)}
+.option-pill.selected{background:var(--blue);color:white;border-color:var(--blue)}
+.option-pill.selected-dark{background:var(--blue-900);color:white;border-color:var(--blue-900)}
+/* keyword pill */
+.kw-pill{display:inline-flex;align-items:center;padding:5px 12px;border-radius:var(--r);font-size:12px;border:1px solid var(--blue);color:var(--n900);background:white;cursor:pointer}
+/* transcription menu */
+.tx-menu{background:#F5F6FA;border-radius:var(--rl);padding:1.25rem;min-width:260px;position:relative}
+.tx-title{font-size:16px;font-weight:700;text-align:center;margin-bottom:1rem;color:var(--n900)}
+.tx-section{margin-bottom:0.75rem}
+.tx-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0;font-size:14px;font-weight:600;color:var(--n900)}
+.tx-body{padding:6px 0;font-size:13px;color:var(--n700);line-height:1.5}
+.tx-play{position:absolute;left:-18px;top:50%;transform:translateY(-50%);width:36px;height:36px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+/* date picker */
+.cal{background:white;border:1px solid var(--n300);border-radius:var(--rl);padding:1rem;min-width:220px;font-size:12px}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;font-size:13px;font-weight:600;color:var(--n900)}
+.cal-nav button{background:none;border:none;cursor:pointer;font-size:16px;color:var(--n700);padding:2px 6px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+.cal-day-hdr{font-size:10px;color:var(--n600);padding:4px 0;font-weight:600}
+.cal-day{padding:5px 2px;cursor:pointer;border-radius:4px;color:var(--n800);font-size:11px}
+.cal-day:hover{background:var(--n100)}
+.cal-day.today{background:var(--blue);color:white;border-radius:50%;font-weight:600}
+.cal-day.other-month{color:var(--n400)}
+.cal-footer{display:flex;gap:6px;margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--n200)}
+.cal-footer button{flex:1;padding:5px;border-radius:var(--r);font-size:11px;cursor:pointer;font-family:var(--ff)}
+.cal-btn-outline{background:white;border:1px solid var(--n300);color:var(--n700)}
+.cal-btn-outline:hover{background:var(--n100)}
+.cal-btn-primary{background:var(--blue);border:1px solid var(--blue);color:white}
+/* date pills */
+.date-pill{padding:4px 12px;border-radius:20px;font-size:11px;cursor:pointer;border:1px solid var(--n300);color:var(--n700);background:white}
+.date-pill.active{background:var(--n800);color:white;border-color:var(--n800)}
+.date-pill:hover:not(.active){background:var(--n100)}
+/* no data */
+.no-data{display:flex;align-items:center;gap:12px;padding:1rem 1.25rem;border:1px solid var(--n300);border-radius:var(--r);background:white;font-size:13px;color:var(--n700)}
+/* coach card */
+.coach-card{background:white;border-radius:var(--rl);width:200px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);flex-shrink:0}
+.coach-nav{background:var(--blue);padding:8px 12px;display:flex;align-items:center;justify-content:space-between;color:white}
+.coach-nav .brand{font-size:14px;font-weight:700;letter-spacing:-0.5px}
+.coach-nav .brand span{font-style:italic;font-weight:400}
+.coach-header{padding:8px 12px;font-size:11px;font-weight:600;display:flex;align-items:center;gap:6px}
+.coach-header.info{background:#E8E8E8;color:var(--n900)}
+.coach-header.warn{background:#FADC63;color:#5a4500}
+.coach-header.danger{background:var(--err);color:white}
+.coach-body{padding:10px 12px;font-size:11px;color:var(--n700);line-height:1.5;min-height:80px}
+.coach-actions{display:flex;gap:6px;padding:8px 12px;border-top:1px solid var(--n200)}
+.coach-btn-bad{background:var(--err);color:white;border:none;padding:5px 10px;border-radius:var(--r);font-size:11px;cursor:pointer;display:flex;align-items:center;gap:4px;font-family:var(--ff)}
+.coach-btn-good{background:var(--suc);color:white;border:none;padding:5px 10px;border-radius:var(--r);font-size:11px;cursor:pointer;display:flex;align-items:center;gap:4px;font-family:var(--ff)}
+/* template card */
+.tmpl-card{background:#F5F6FA;border-radius:var(--rl);padding:1.25rem;border:2px solid var(--n300);margin-bottom:0.75rem;cursor:pointer;transition:border-color 0.15s}
+.tmpl-card:hover{border-color:var(--blue)}
+.tmpl-card.selected{border-color:var(--blue);background:white}
+.tmpl-card .tmpl-title{font-size:15px;font-weight:700;margin-bottom:0.5rem}
+.tmpl-card .tmpl-body{font-size:12px;color:var(--n700);margin-bottom:1rem}
+.tmpl-select{padding:5px 16px;border-radius:var(--r);border:1px solid var(--blue);background:white;color:var(--blue);font-size:13px;cursor:pointer;font-family:var(--ff)}
+.tmpl-card.selected .tmpl-select{background:var(--blue);color:white}
+/* audio */
+.audio-track{display:flex;align-items:center;gap:0;width:100%;position:relative}
+.audio-track .track-line{flex:1;height:3px;background:var(--n900)}
+.audio-track .track-cap{width:3px;height:16px;background:var(--n900);border-radius:1px;flex-shrink:0}
+.audio-track .track-thumb{width:14px;height:14px;border-radius:50%;border:2px solid var(--blue);background:white;position:absolute;left:38%;transform:translateX(-50%);top:50%;margin-top:-7px;cursor:pointer}
+/* divider */
+.divider-h{height:1px;background:var(--n300);margin:1rem 0;width:100%}
+.divider-v{width:4px;height:80px;background:var(--n400);border-radius:2px;display:inline-block}
+/* underline accent */
+.underline-accent{height:3px;background:var(--blue);border-radius:2px;width:100%;margin:4px 0}
 </style>
 </head>
 <body>
@@ -209,9 +252,12 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
     <div class="nav-section">Components</div>
     <a class="nav-item" onclick="nav('buttons',this)">Buttons</a>
     <a class="nav-item" onclick="nav('inputs',this)">Inputs & Forms</a>
-    <a class="nav-item" onclick="nav('feedback',this)">Alerts & Labels</a>
+    <a class="nav-item" onclick="nav('alerts',this)">Alerts & Labels</a>
     <a class="nav-item" onclick="nav('navigation',this)">Navigation</a>
-    <a class="nav-item" onclick="nav('overlay',this)">Modals & Overlays</a>
+    <a class="nav-item" onclick="nav('option',this)">Option</a>
+    <a class="nav-item" onclick="nav('modals',this)">Modals & Overlays</a>
+    <a class="nav-item" onclick="nav('datepicker',this)">Date Picker</a>
+    <a class="nav-item" onclick="nav('transcription',this)">Transcription Menu</a>
     <a class="nav-item" onclick="nav('data',this)">Data Display</a>
     <div class="nav-section">Modern Tokens</div>
     <a class="nav-item" onclick="nav('tokens',this)">Token Architecture</a>
@@ -222,37 +268,32 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
     <!-- INTRO -->
     <div class="page active" id="page-intro">
       <div class="page-title">Aigent Design System</div>
-      <div class="page-desc">A unified visual language for the Aigent platform — covering foundations, components, and usage guidelines for consistent, accessible product experiences.</div>
-      <div class="callout"><strong>About this system.</strong> Built for a B2B enterprise SaaS platform (contact center intelligence), this system prioritizes clarity, data density, and trust. Components were versioned in Figma with explicit changelog notes and archived states.</div>
-      <div class="sec">What's included</div>
-      <div class="comp-grid">
-        <div class="comp-card"><div class="comp-name">Foundations</div><div class="comp-desc">Color palettes, type scale, responsive grid specs, icon library, and elevation tokens.</div></div>
-        <div class="comp-card"><div class="comp-name">Components</div><div class="comp-desc">20+ versioned UI components covering all major interaction patterns in the platform.</div></div>
-        <div class="comp-card"><div class="comp-name">Usage Guidelines</div><div class="comp-desc">When to use, when not to use, and state documentation for every component.</div></div>
-        <div class="comp-card"><div class="comp-name">Modern Token Map</div><div class="comp-desc">How this system maps to W3C Design Token architecture and AI-assisted theming.</div></div>
-      </div>
+      <div class="page-desc">A unified visual language for the Aigent contact center intelligence platform — covering foundations, components, and usage guidelines for consistent, accessible product experiences.</div>
+      <div class="callout"><strong>About this system.</strong> Built for a B2B enterprise SaaS platform, this system prioritizes clarity, data density, and trust. Components were versioned in Figma with explicit changelog notes and archived states.</div>
       <div class="sec">Component inventory</div>
       <table class="dtbl" style="font-size:12px">
         <thead><tr><th>Component</th><th>Version</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>Breadcrumbs</td><td><span class="tok">v1.1</span></td><td><span class="badge b-s">Stable</span></td></tr>
-          <tr><td>Checkbox</td><td><span class="tok">v1.1</span></td><td><span class="badge b-s">Stable</span></td></tr>
-          <tr><td>Radio Button</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Alert / Pop-up</td><td><span class="tok">v2.1</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Radio Button</td><td><span class="tok">v1.1</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Dropdown</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Transcription Menu</td><td><span class="tok">v1.0</span></td><td><span class="badge b-n">Specialized</span></td></tr>
+          <tr><td>Option</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Pagination</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Buttons</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
-          <tr><td>Loading / Spinner</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Loading</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Audio Scrubber</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
-          <tr><td>Modals / Pop-ups</td><td><span class="tok">v2.1</span></td><td><span class="badge b-s">Stable</span></td></tr>
+          <tr><td>Modals / Pop-ups</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Inputs</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Toggles</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Date Picker</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Links</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
-          <tr><td>Labels / Badges</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
-          <tr><td>Tabs</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
-          <tr><td>Transcription Menu</td><td><span class="tok">v1.0</span></td><td><span class="badge b-n">Specialized</span></td></tr>
+          <tr><td>Labels / Tabs</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Tables</td><td><span class="tok">v1.0</span></td><td><span class="badge b-s">Stable</span></td></tr>
           <tr><td>Dark / Light Mode</td><td><span class="tok">v1.0</span></td><td><span class="badge b-n">Utility</span></td></tr>
+          <tr><td>Dividers</td><td><span class="tok">v1.0</span></td><td><span class="badge b-n">Utility</span></td></tr>
+          <tr><td>Templates</td><td><span class="tok">v1.0</span></td><td><span class="badge b-n">Specialized</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -260,7 +301,7 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
     <!-- COLORS -->
     <div class="page" id="page-colors">
       <div class="page-title">Colors</div>
-      <div class="page-desc">The Aigent color system uses semantic ramps across 8 palettes. Each ramp scales from 50 (lightest) to 900 (darkest). Always reference colors by ramp + step — never hardcode hex values in components.</div>
+      <div class="page-desc">The Aigent color system uses semantic ramps across 8 palettes. Always reference colors by ramp + step — never hardcode hex values in components.</div>
       <div class="sec">Neutral</div>
       <div class="swatches">
         <div class="swatch"><div class="sw-c" style="background:#F9F9F9"></div><div class="sw-i"><div class="sw-s">50</div><div class="sw-h">#F9F9F9</div></div></div>
@@ -284,9 +325,7 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
       <div class="sec">Secondary</div>
       <div class="swatches">
         <div class="swatch"><div class="sw-c" style="background:#6960EB"></div><div class="sw-i"><div class="sw-s">50</div><div class="sw-h">#6960EB</div></div></div>
-        <div class="swatch"><div class="sw-c" style="background:#6058D2"></div><div class="sw-i"><div class="sw-s">300</div><div class="sw-h">#6058D2</div></div></div>
         <div class="swatch"><div class="sw-c" style="background:#574FBF"></div><div class="sw-i"><div class="sw-s">500</div><div class="sw-h">#574FBF</div></div></div>
-        <div class="swatch"><div class="sw-c" style="background:#4B44A3"></div><div class="sw-i"><div class="sw-s">700</div><div class="sw-h">#4B44A3</div></div></div>
         <div class="swatch"><div class="sw-c" style="background:#413C8B"></div><div class="sw-i"><div class="sw-s">900</div><div class="sw-h">#413C8B</div></div></div>
       </div>
       <div class="sec">Semantic</div>
@@ -296,45 +335,36 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
         <div><div style="font-size:12px;font-weight:600;color:var(--n800);margin-bottom:6px">Warning</div><div class="swatches"><div class="swatch"><div class="sw-c" style="background:#FFF1B7"></div><div class="sw-i"><div class="sw-s">50</div><div class="sw-h">#FFF1B7</div></div></div><div class="swatch"><div class="sw-c" style="background:#FADC63"></div><div class="sw-i"><div class="sw-s">500</div><div class="sw-h">#FADC63</div></div></div><div class="swatch"><div class="sw-c" style="background:#E1B400"></div><div class="sw-i"><div class="sw-s">900</div><div class="sw-h">#E1B400</div></div></div></div></div>
         <div><div style="font-size:12px;font-weight:600;color:var(--n800);margin-bottom:6px">Tertiary</div><div class="swatches"><div class="swatch"><div class="sw-c" style="background:#2FB88A"></div><div class="sw-i"><div class="sw-s">500</div><div class="sw-h">#2FB88A</div></div></div></div></div>
       </div>
-      <div class="sec">Shades</div>
-      <div class="swatches">
-        <div class="swatch"><div class="sw-c" style="background:#FFFFFF"></div><div class="sw-i"><div class="sw-s">White</div><div class="sw-h">#FFFFFF</div></div></div>
-        <div class="swatch"><div class="sw-c" style="background:#000000"></div><div class="sw-i"><div class="sw-s">Black</div><div class="sw-h">#000000</div></div></div>
-      </div>
     </div>
 
     <!-- TYPOGRAPHY -->
     <div class="page" id="page-typography">
       <div class="page-title">Typography</div>
-      <div class="page-desc">Two-weight scale (Semi Bold / Extra Bold) across Display, Heading, and Paragraph roles. All sizes defined in relative units for accessibility compliance.</div>
+      <div class="page-desc">Two-weight scale (Semi Bold / Extra Bold) across Display, Heading, and Paragraph roles.</div>
       <div class="sec">Scale</div>
       <div class="type-row"><div class="type-meta"><div class="type-lbl">Display 01</div><div class="type-toks"><span class="tok">40px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:26px;font-weight:600;letter-spacing:-1px">Display 01</div></div>
       <div class="type-row"><div class="type-meta"><div class="type-lbl">Display 02</div><div class="type-toks"><span class="tok">32px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:21px;font-weight:600;letter-spacing:-0.5px">Display 02</div></div>
       <div class="type-row"><div class="type-meta"><div class="type-lbl">Heading 01</div><div class="type-toks"><span class="tok">28px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:18px;font-weight:600">Heading 01</div></div>
       <div class="type-row"><div class="type-meta"><div class="type-lbl">Heading 02</div><div class="type-toks"><span class="tok">22px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:16px;font-weight:600">Heading 02</div></div>
       <div class="type-row"><div class="type-meta"><div class="type-lbl">Heading 03</div><div class="type-toks"><span class="tok">18px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:14px;font-weight:600">Heading 03</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-lbl">Heading 04</div><div class="type-toks"><span class="tok">16px</span><span class="tok">SemiBold</span></div></div><div class="type-ex" style="font-size:13px;font-weight:600">Heading 04</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-lbl">Paragraph 01</div><div class="type-toks"><span class="tok">14px</span><span class="tok">Regular</span></div></div><div class="type-ex" style="font-size:13px;line-height:1.6;color:var(--n700)">It is a long established fact that a reader will be distracted by the readable content of the page when looking at its layout.</div></div>
-      <div class="type-row"><div class="type-meta"><div class="type-lbl">Paragraph 02</div><div class="type-toks"><span class="tok">12px</span><span class="tok">Regular</span></div></div><div class="type-ex" style="font-size:12px;line-height:1.6;color:var(--n700)">It is a long established fact that a reader will be distracted by the readable content of the page when looking at its layout.</div></div>
-      <div class="sec">Weight variants</div>
-      <div class="demo"><div class="demo-lbl">Three weights at the same level</div><span style="font-size:15px;font-weight:400">Semi Bold (400)</span><span style="font-size:15px;font-weight:600">Bold (600)</span><span style="font-size:15px;font-weight:700">Extra Bold (700)</span></div>
-      <div class="callout cw">Use Semi Bold as default, Bold for emphasis, Extra Bold only for hero moments. Never mix weights within a single text block.</div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Paragraph 01</div><div class="type-toks"><span class="tok">14px</span><span class="tok">Regular</span></div></div><div class="type-ex" style="font-size:13px;line-height:1.6;color:var(--n700)">It is a long established fact that a reader will be distracted by the readable content of the page.</div></div>
+      <div class="type-row"><div class="type-meta"><div class="type-lbl">Paragraph 02</div><div class="type-toks"><span class="tok">12px</span><span class="tok">Regular</span></div></div><div class="type-ex" style="font-size:12px;line-height:1.6;color:var(--n700)">It is a long established fact that a reader will be distracted by the readable content of the page.</div></div>
     </div>
 
     <!-- GRIDS -->
     <div class="page" id="page-grids">
       <div class="page-title">Grids</div>
-      <div class="page-desc">Three-tier responsive grid. Gutter is consistent at 20px across all breakpoints. Never place interactive controls outside the column structure.</div>
+      <div class="page-desc">Three-tier responsive grid. Gutter is consistent at 20px across all breakpoints.</div>
       <div class="sec">Breakpoints</div>
-      <div class="grid-card"><div class="grid-lbl">Desktop</div><div class="grid-spec">Range: 1280px – 1728px &nbsp;·&nbsp; 12 columns &nbsp;·&nbsp; Margins: 120px &nbsp;·&nbsp; Gutter: 20px</div><div class="grid-vis" id="gd"></div></div>
-      <div class="grid-card"><div class="grid-lbl">Tablet</div><div class="grid-spec">Range: 744px – 1024px &nbsp;·&nbsp; 6 columns &nbsp;·&nbsp; Margins: 60px &nbsp;·&nbsp; Gutter: 20px</div><div class="grid-vis" id="gt" style="max-width:60%"></div></div>
-      <div class="grid-card"><div class="grid-lbl">Mobile</div><div class="grid-spec">Range: 320px – 428px &nbsp;·&nbsp; 4 columns &nbsp;·&nbsp; Margins: 30px &nbsp;·&nbsp; Gutter: 20px</div><div class="grid-vis" id="gm" style="max-width:36%"></div></div>
+      <div class="grid-card"><div class="grid-lbl">Desktop</div><div class="grid-spec">Range: 1280px – 1728px · 12 columns · Margins: 120px · Gutter: 20px</div><div class="grid-vis" id="gd"></div></div>
+      <div class="grid-card"><div class="grid-lbl">Tablet</div><div class="grid-spec">Range: 744px – 1024px · 6 columns · Margins: 60px · Gutter: 20px</div><div class="grid-vis" id="gt" style="max-width:60%"></div></div>
+      <div class="grid-card"><div class="grid-lbl">Mobile</div><div class="grid-spec">Range: 320px – 428px · 4 columns · Margins: 30px · Gutter: 20px</div><div class="grid-vis" id="gm" style="max-width:36%"></div></div>
     </div>
 
     <!-- ICONS -->
     <div class="page" id="page-icons">
       <div class="page-title">Icons</div>
-      <div class="page-desc">Custom icon set built for the Aigent platform. All icons render at 24px. Always pair icons with a visible text label in navigation. Icon-only controls require an accessible aria-label.</div>
+      <div class="page-desc">Custom icon set built for the Aigent platform. All icons render at 24px. Always pair icons with a visible text label in navigation.</div>
       <div class="sec">Icon library</div>
       <div class="icon-grid" id="icon-grid"></div>
     </div>
@@ -367,45 +397,74 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
     <!-- BUTTONS -->
     <div class="page" id="page-buttons">
       <div class="page-title">Buttons</div>
-      <div class="page-desc">Buttons communicate action. Never use more than one Primary button per section. Use Danger only for destructive, irreversible actions.</div>
+      <div class="page-desc">Buttons communicate action. Properties: state (default, hover, pressed, disabled), type (primary, secondary), size (small, medium, large), left icon, right icon.</div>
       <div class="sec">Variants</div>
-      <div class="demo"><div class="demo-lbl">All variants</div><button class="btn btn-p">Primary</button><button class="btn btn-s">Secondary</button><button class="btn btn-g">Ghost</button><button class="btn btn-d">Danger</button></div>
+      <div class="demo"><div class="demo-lbl">Primary / Secondary / Ghost / Danger filled / Danger outline</div>
+        <button class="btn btn-p"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Button <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></button>
+        <button class="btn btn-s"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Button <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></button>
+        <button class="btn btn-g">Button</button>
+        <button class="btn btn-d"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Button <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></button>
+        <button class="btn btn-ds"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Button <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></button>
+      </div>
       <div class="sec">Sizes</div>
-      <div class="demo"><div class="demo-lbl">Small / Default / Large</div><button class="btn btn-p btn-sm">Small</button><button class="btn btn-p">Default</button><button class="btn btn-p btn-lg">Large</button></div>
+      <div class="demo"><div class="demo-lbl">Small / Medium / Large</div><button class="btn btn-p btn-sm">Button</button><button class="btn btn-p">Button</button><button class="btn btn-p btn-lg">Button</button></div>
       <div class="sec">States</div>
-      <div class="demo"><div class="demo-lbl">Enabled vs disabled</div><button class="btn btn-p">Enabled</button><button class="btn btn-p" disabled>Disabled</button><button class="btn btn-s">Enabled</button><button class="btn btn-s" disabled>Disabled</button></div>
+      <div class="demo"><div class="demo-lbl">Enabled / Disabled</div><button class="btn btn-p">Button</button><button class="btn btn-p" disabled>Button</button><button class="btn btn-s">Button</button><button class="btn btn-s" disabled>Button</button></div>
       <div class="sec">Dark / Light mode toggle</div>
-      <div class="demo"><button class="btn" style="background:#fff;color:#202944;border-color:var(--n300)">☀ Light</button><button class="btn" style="background:#202944;color:#fff;border-color:#202944">◐ Dark</button></div>
+      <div class="demo"><div class="demo-lbl">Segmented control — light selected / dark selected</div>
+        <div style="display:inline-flex;border-radius:var(--r);overflow:hidden;border:1px solid var(--n300)">
+          <button class="btn" style="border-radius:0;border:none;background:white;color:var(--n900);border-right:1px solid var(--n300)">☀ Light</button>
+          <button class="btn" style="border-radius:0;border:none;background:var(--n200);color:var(--n700)">◐ Dark</button>
+        </div>
+        <div style="display:inline-flex;border-radius:var(--r);overflow:hidden;border:1px solid #333">
+          <button class="btn" style="border-radius:0;border:none;background:#333;color:#aaa;border-right:1px solid #555">☀ Light</button>
+          <button class="btn" style="border-radius:0;border:none;background:#111;color:white">◐ Dark</button>
+        </div>
+      </div>
+      <div class="sec">View button</div>
+      <div class="demo"><div class="demo-lbl">Default / Active</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--n300);border-radius:var(--r);cursor:pointer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <button class="btn btn-p"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> View</button>
+      </div>
     </div>
 
     <!-- INPUTS -->
     <div class="page" id="page-inputs">
       <div class="page-title">Inputs & Forms</div>
-      <div class="page-desc">Form controls share a common height of 36px. All controls have default, focused, error, warning, and disabled states.</div>
+      <div class="page-desc">Form controls share a common height of 36px. States: default, focused, error, warning, disabled. Sizes: small, medium.</div>
       <div class="sec">Text inputs</div>
       <div class="demo" style="gap:16px;align-items:flex-start">
         <div class="field"><span class="flbl">Default</span><input class="inp" placeholder="Input text here"></div>
-        <div class="field"><span class="flbl">Focused</span><input class="inp" style="border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,102,255,0.1)" value="Focused"></div>
-        <div class="field"><span class="flbl">Error</span><input class="inp" style="border-color:var(--err)" value="Input text here"><div class="hint-e">⚠ Hint message</div></div>
-        <div class="field"><span class="flbl">Warning</span><input class="inp" style="border-color:#FFCC00" value="Input text here"><div class="hint-w">⚠ Hint message</div></div>
-        <div class="field"><span class="flbl" style="opacity:0.5">Disabled</span><input class="inp" disabled placeholder="Disabled"></div>
+        <div class="field"><span class="flbl">Focused</span><input class="inp" style="border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,102,255,0.1)" value="Input text here"></div>
+        <div class="field"><span class="flbl">Error</span><input class="inp" style="border-color:var(--err)" value="Input text here"><div style="display:flex;align-items:center;gap:4px" class="hint-e"><svg width="11" height="11" viewBox="0 0 24 24" fill="var(--err)" stroke="none"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12" stroke="white" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke="white" stroke-width="2"/></svg> Hint</div></div>
+        <div class="field"><span class="flbl">Warning</span><input class="inp" style="border-color:#FFCC00" value="Input text here"><div style="display:flex;align-items:center;gap:4px" class="hint-w"><svg width="11" height="11" viewBox="0 0 24 24" fill="#FFCC00" stroke="none"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13" stroke="white" stroke-width="2"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="white" stroke-width="2"/></svg> Hint</div></div>
+        <div class="field"><span class="flbl" style="opacity:0.5">Disabled</span><input class="inp" disabled placeholder="Input text here"></div>
       </div>
       <div class="sec">Search</div>
-      <div class="demo">
+      <div class="demo" style="gap:16px">
         <div style="display:flex;align-items:center;border:1px solid var(--n300);border-radius:var(--r);overflow:hidden;background:white">
-          <svg style="margin:0 8px;flex-shrink:0;color:var(--n600)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <svg style="margin:0 8px;flex-shrink:0;color:var(--n600)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           <input style="border:none;padding:7px 6px 7px 0;font-size:13px;outline:none;background:transparent;font-family:var(--ff);color:var(--n800);width:140px" placeholder="Search...">
           <button class="btn btn-p btn-sm" style="border-radius:0;border:none;height:36px">Search</button>
         </div>
+        <div style="display:flex;align-items:center;border:1px solid var(--n300);border-radius:var(--r);overflow:hidden;background:var(--n100);opacity:0.5">
+          <svg style="margin:0 8px;flex-shrink:0;color:var(--n600)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input style="border:none;padding:7px 6px 7px 0;font-size:13px;outline:none;background:transparent;font-family:var(--ff);width:140px" placeholder="Search..." disabled>
+          <button class="btn btn-sm" style="border-radius:0;border:none;height:36px;background:var(--n300);color:var(--n600)" disabled>Search</button>
+        </div>
       </div>
       <div class="sec">Password field</div>
-      <div class="demo" style="align-items:flex-start">
-        <div class="field"><span class="flbl">Enter New Password</span><div style="position:relative;display:inline-block"><input type="password" class="inp" value="SuperSecure123" style="padding-right:34px"><svg style="position:absolute;right:8px;top:50%;transform:translateY(-50%);color:var(--n600);cursor:pointer" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
+      <div class="demo" style="align-items:flex-start;gap:16px">
+        <div class="field"><span class="flbl">Enter New Password</span><div style="position:relative;display:inline-block"><input type="password" class="inp" value="SuperSecure123" style="padding-right:34px;width:220px"><svg style="position:absolute;right:8px;top:50%;transform:translateY(-50%);color:var(--n600);cursor:pointer" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
+        <div class="field"><span class="flbl">Enter New Password</span><div style="position:relative;display:inline-block"><input type="text" class="inp" value="SuperSecure123" style="padding-right:34px;width:220px"><svg style="position:absolute;right:8px;top:50%;transform:translateY(-50%);color:var(--n600);cursor:pointer" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div></div>
       </div>
       <div class="sec">Dropdown</div>
-      <div class="demo" style="align-items:flex-start">
-        <div class="field"><span class="flbl">Label</span><div class="dd"><div class="dd-tr" id="ddt" onclick="toggleDD()">Dropdown... <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div><div class="dd-menu" id="ddm"><div class="dd-item">Option A</div><div class="dd-item">Option B</div><div class="dd-item">Option C</div></div></div></div>
-        <div class="field"><span class="flbl" style="opacity:0.5">Disabled</span><div class="dd-tr" style="opacity:0.4;cursor:not-allowed">Dropdown... <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+      <div class="demo" style="align-items:flex-start;gap:16px">
+        <div class="field"><span class="flbl">Default</span><div class="dd"><div class="dd-tr" id="ddt" onclick="toggleDD()">Dropdown... <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div><div class="dd-menu" id="ddm"><div class="dd-item">Option A</div><div class="dd-item">Option B</div><div class="dd-item">Option C</div></div></div></div>
+        <div class="field"><span class="flbl">Open state</span><div class="dd-tr open" style="width:160px;border-color:var(--blue)">Dropdown... <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div></div>
+        <div class="field"><span class="flbl" style="opacity:0.5">Disabled</span><div class="dd-tr" style="opacity:0.4;cursor:not-allowed">Dropdown... <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
       </div>
       <div class="sec">Checkbox</div>
       <div class="demo" style="flex-direction:column;align-items:flex-start;gap:8px">
@@ -416,63 +475,87 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
       </div>
       <div class="sec">Radio button</div>
       <div class="demo" style="flex-direction:column;align-items:flex-start;gap:8px">
-        <label class="chk"><input type="radio" name="r1" checked> Option A</label>
-        <label class="chk"><input type="radio" name="r1"> Option B</label>
-        <label class="chk"><input type="radio" name="r1" disabled> Disabled option</label>
+        <label class="chk"><input type="radio" name="r1"> Label — default</label>
+        <label class="chk"><input type="radio" name="r1"> Label — focused (blue ring)</label>
+        <label class="chk"><input type="radio" name="r1" checked> Label — selected</label>
+        <label class="chk"><input type="radio" name="r1" disabled> Label — disabled</label>
+        <label class="chk"><input type="radio" name="r1" checked disabled> Label — disabled selected</label>
       </div>
       <div class="sec">Toggle switch</div>
       <div class="demo" style="flex-direction:column;align-items:flex-start;gap:10px">
-        <div class="tgl-row"><label class="tgl"><input type="checkbox" checked><span class="tgl-sl"></span></label> On</div>
-        <div class="tgl-row"><label class="tgl"><input type="checkbox"><span class="tgl-sl"></span></label> Off</div>
-        <div class="tgl-row"><label class="tgl"><input type="checkbox" disabled><span class="tgl-sl" style="opacity:0.4"></span></label><span style="opacity:0.4">Disabled</span></div>
+        <div class="tgl-row">
+          <label class="tgl"><input type="checkbox" checked><span class="tgl-sl"><span class="tgl-lbl on">On</span><span class="tgl-lbl off">Off</span></span></label>
+          <span style="font-size:12px;color:var(--n700)">Active — On</span>
+        </div>
+        <div class="tgl-row">
+          <label class="tgl"><input type="checkbox"><span class="tgl-sl"><span class="tgl-lbl on">On</span><span class="tgl-lbl off" style="color:var(--n900)">Off</span></span></label>
+          <span style="font-size:12px;color:var(--n700)">Active — Off</span>
+        </div>
+        <div class="tgl-row">
+          <label class="tgl"><input type="checkbox" disabled><span class="tgl-sl" style="opacity:0.4"><span class="tgl-lbl on">On</span><span class="tgl-lbl off" style="color:var(--n900)">Off</span></span></label>
+          <span style="font-size:12px;color:var(--n400)">Disabled</span>
+        </div>
       </div>
     </div>
 
-    <!-- FEEDBACK -->
-    <div class="page" id="page-feedback">
+    <!-- ALERTS -->
+    <div class="page" id="page-alerts">
       <div class="page-title">Alerts & Labels</div>
-      <div class="page-desc">Alerts communicate system-level feedback. Labels tag content states. Both strictly follow the semantic color system — never use color arbitrarily.</div>
-      <div class="sec">Alert variants</div>
-      <div class="alert a-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><div><strong>Info:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
-      <div class="alert a-s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><div><strong>Success:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
-      <div class="alert a-w"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div><strong>Warning:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
-      <div class="alert a-e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><div><strong>Error:</strong> Alert title — lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
-      <div class="sec">Alert with actions (v2.1)</div>
-      <div class="alert a-w" style="flex-wrap:wrap;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div style="flex:1">Alert title — action is required to continue.</div><div style="display:flex;gap:6px;margin-left:auto"><button class="btn btn-g btn-sm">Action 2</button><button class="btn btn-p btn-sm">Action 1</button></div><button class="a-cls" onclick="this.parentElement.style.display='none'">×</button></div>
+      <div class="page-desc">Alerts communicate system-level feedback. Labels tag content states. Both strictly follow the semantic color system.</div>
+      <div class="sec">Alert variants (v2.1)</div>
+      <div class="alert a-i">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Alert title</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        <div style="display:flex;gap:6px;margin-left:auto;flex-shrink:0"><button class="btn btn-p btn-sm">Action 1</button><button class="btn btn-s btn-sm">Action 2</button></div>
+        <button class="a-cls" onclick="this.parentElement.style.display='none'">×</button>
+      </div>
+      <div class="alert a-s">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>Alert title</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+        <div style="display:flex;gap:6px;margin-left:auto;flex-shrink:0"><button class="btn btn-sm" style="background:#085041;color:white;border-color:#085041">Action 1</button><button class="btn btn-sm" style="background:white;color:#085041;border-color:#085041">Action 2</button></div>
+        <button class="a-cls" onclick="this.parentElement.style.display='none'">×</button>
+      </div>
+      <div class="alert a-w">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Alert title</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+        <div style="display:flex;gap:6px;margin-left:auto;flex-shrink:0"><button class="btn btn-sm" style="background:#633806;color:white;border-color:#633806">Action 1</button><button class="btn btn-sm" style="background:white;color:#633806;border-color:#633806">Action 2</button></div>
+        <button class="a-cls" onclick="this.parentElement.style.display='none'">×</button>
+      </div>
+      <div class="alert a-e">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div><strong>Alert title</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+        <div style="display:flex;gap:6px;margin-left:auto;flex-shrink:0"><button class="btn btn-sm" style="background:#791F1F;color:white;border-color:#791F1F">Action 1</button><button class="btn btn-sm" style="background:white;color:#791F1F;border-color:#791F1F">Action 2</button></div>
+        <button class="a-cls" onclick="this.parentElement.style.display='none'">×</button>
+      </div>
       <div class="sec">Labels / Badges</div>
       <div class="demo"><span class="badge b-p">Primary</span><span class="badge b-s">Success</span><span class="badge b-w">Warning</span><span class="badge b-e">Error</span><span class="badge b-n">Neutral</span></div>
       <div class="sec">No data state</div>
-      <div class="demo" style="justify-content:center;padding:1.5rem"><div style="display:flex;align-items:center;gap:10px;color:var(--n600);font-size:13px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FADC63" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>No data available</div></div>
-      <div class="callout cw"><strong>v2.1 change:</strong> Action buttons now align vertically centered. Primary action moved right. Spacing increased to reduce mis-tap risk.</div>
+      <div class="demo" style="justify-content:center">
+        <div class="no-data"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FADC63" stroke="none"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12" stroke="white" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke="white" stroke-width="2"/></svg> No data available</div>
+      </div>
     </div>
 
     <!-- NAVIGATION -->
     <div class="page" id="page-navigation">
       <div class="page-title">Navigation</div>
-      <div class="page-desc">All navigation elements use Primary/500 (#0066FF) for active and interactive states. Visited states use Secondary/500 (#574FBF).</div>
+      <div class="page-desc">Navigation components use Primary/500 (#0066FF) for active states. Visited states use Secondary/500 (#574FBF).</div>
       <div class="sec">Breadcrumbs (v1.1)</div>
-      <div class="demo" style="flex-direction:column;align-items:flex-start;gap:10px">
-        <div class="bc"><a href="#">Home</a><span class="bc-sep">▶</span><a href="#">Section</a><span class="bc-sep">▶</span><a href="#">Subsection</a><span class="bc-sep">▶</span><span>Current page</span></div>
-        <div class="bc"><a href="#" class="vis">Home</a><span class="bc-sep">▶</span><a href="#">Section</a><span class="bc-sep">▶</span><span>Current page</span></div>
+      <div class="demo" style="flex-direction:column;align-items:flex-start;gap:12px">
+        <div class="bc"><a href="#">Breadcrumb</a><span class="bc-sep">▶</span><a href="#" style="text-decoration:underline">Breadcrumb</a><span class="bc-sep">▶</span><span style="color:var(--n900);font-weight:500">Breadcrumb</span><span class="bc-sep">▶</span><a href="#" style="color:var(--sec)">Breadcrumb</a><span class="bc-sep">▶</span><a href="#">Breadcrumb</a></div>
       </div>
-      <div class="callout"><strong>v1.1:</strong> Label copy standardized to generic "Label". Visited state uses Secondary/500 to distinguish from unvisited links.</div>
+      <div class="callout"><strong>v1.1:</strong> Label copy standardized. Visited state uses Secondary/500 (#574FBF). States: default (blue), hover (underline), current (dark, no link), disabled (gray), visited (purple).</div>
       <div class="sec">Pagination</div>
       <div class="demo" style="flex-direction:column;align-items:flex-start;gap:12px">
-        <div class="pag"><div class="pb">◀</div><div class="pb">1</div><div class="pb act">2</div><div class="pb">3</div><div class="pb" style="letter-spacing:2px">···</div><div class="pb">8</div><div class="pb">9</div><div class="pb">10</div><div class="pb">▶</div></div>
+        <div class="pag"><div class="pb">◀</div><div class="pb">1</div><div class="pb act">2</div><div class="pb">3</div><div class="pb">···</div><div class="pb">8</div><div class="pb">9</div><div class="pb">10</div><div class="pb">▶</div></div>
+        <div class="pag"><div class="pb">◀</div><div class="pb">▶</div></div>
         <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--n700)">Go to page <input style="width:44px;padding:4px 8px;border:1px solid var(--n300);border-radius:var(--r);font-size:12px;text-align:center" placeholder="10"></div>
       </div>
       <div class="sec">Tabs</div>
       <div style="border:1px solid var(--n300);border-radius:var(--rl);overflow:hidden;margin:0.75rem 0">
         <div class="tab-bar" style="padding:0 1rem;background:var(--n50)">
-          <div class="tab act" onclick="switchTab(this,'tc1')">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;vertical-align:middle"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Label
-          </div>
-          <div class="tab" onclick="switchTab(this,'tc2')">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;vertical-align:middle"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Label
-          </div>
-          <div class="tab" onclick="switchTab(this,'tc3')">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;vertical-align:middle"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Label
-          </div>
+          <div class="tab act" onclick="switchTab(this,'tc1')"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Label</div>
+          <div class="tab" onclick="switchTab(this,'tc2')"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Label</div>
+          <div class="tab" onclick="switchTab(this,'tc3')"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Label</div>
         </div>
         <div id="tc1" class="tab-content act">Tab 1 content area</div>
         <div id="tc2" class="tab-content">Tab 2 content area</div>
@@ -480,31 +563,215 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
       </div>
       <div class="sec">Links</div>
       <div class="demo" style="flex-direction:column;align-items:flex-start;gap:8px">
-        <a href="#" class="lnk">Default link</a>
-        <a href="#" class="lnk" style="text-decoration:underline">Hover / underline state</a>
-        <a href="#" class="lnk vis">Visited link</a>
-        <a href="#" class="lnk bld">Bold / emphasized link</a>
+        <a href="#" class="lnk">Default link — medium</a>
+        <a href="#" class="lnk" style="font-size:11px">Default link — small</a>
+        <a href="#" class="lnk" style="text-decoration:underline">Hover state</a>
+        <a href="#" class="lnk vis">Active / visited</a>
+        <a href="#" class="lnk bld">Bold link</a>
       </div>
     </div>
 
-    <!-- OVERLAY -->
-    <div class="page" id="page-overlay">
+    <!-- OPTION -->
+    <div class="page" id="page-option">
+      <div class="page-title">Option</div>
+      <div class="page-desc">Option is a selectable pill used for single-choice selections within a set. Three states: default, selected, and selected-hover.</div>
+      <div class="sec">States</div>
+      <div class="demo" style="gap:12px">
+        <div class="option-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Option A
+        </div>
+        <div class="option-pill selected">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Option A
+        </div>
+        <div class="option-pill selected-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Option A
+        </div>
+      </div>
+      <div class="callout">Use Option when the user must choose one item from a small set (2–5 options) visible all at once. For longer lists, use Dropdown instead.</div>
+    </div>
+
+    <!-- MODALS -->
+    <div class="page" id="page-modals">
       <div class="page-title">Modals & Overlays</div>
-      <div class="page-desc">Modals interrupt flow for high-priority actions only. Use sparingly — confirmations, destructive actions, or tasks that can't be completed inline.</div>
+      <div class="page-desc">Modals interrupt flow for high-priority actions. Use sparingly. The system includes general-purpose dialogs, the Aigent coach card pop-up, templates, and utility overlays.</div>
       <div class="sec">Alert modal (v2.1)</div>
       <div class="ov"><div class="modal" style="width:340px"><div style="font-size:15px;font-weight:600;margin-bottom:8px">Alert title</div><div style="font-size:13px;color:var(--n600);line-height:1.5;margin-bottom:1.25rem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Action is required to continue.</div><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn btn-g btn-sm">Cancel</button><button class="btn btn-p btn-sm">Confirm</button></div></div></div>
       <div class="sec">Delete confirmation</div>
       <div class="ov"><div class="modal" style="width:320px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E10412" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><div style="font-size:15px;font-weight:600">Delete item?</div></div><div style="font-size:13px;color:var(--n600);line-height:1.5;margin-bottom:1.25rem">This action cannot be undone. All associated data will be permanently removed.</div><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn btn-g btn-sm">Cancel</button><button class="btn btn-d btn-sm">Delete</button></div></div></div>
       <div class="sec">Change profile picture</div>
-      <div class="ov"><div class="modal" style="width:300px;text-align:center"><div style="width:64px;height:64px;border-radius:50%;background:var(--n200);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9E9E9E" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div style="font-size:15px;font-weight:600;margin-bottom:0.5rem">Add Profile Picture</div><div style="font-size:12px;color:var(--n600);margin-bottom:1.25rem">Upload a photo to personalize your account.</div><button class="btn btn-p" style="width:100%">Upload photo</button></div></div>
+      <div class="ov"><div class="modal" style="width:320px;text-align:center"><div style="width:72px;height:72px;border-radius:50%;background:var(--n200);margin:0 auto 0.75rem;display:flex;align-items:center;justify-content:center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9E9E9E" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div style="font-size:15px;font-weight:700;margin-bottom:4px">Add Profile Picture</div><div style="font-size:12px;color:var(--n600);margin-bottom:0.5rem">Drag &amp; drop photo here</div><div style="font-size:12px;color:var(--n600);margin-bottom:0.75rem">- or -</div><button class="btn btn-s" style="width:100%;margin-bottom:8px">Upload from computer</button><button class="btn btn-p" style="width:100%">Upload</button></div></div>
+      <div class="sec">Version copied confirmation</div>
+      <div class="ov"><div class="modal" style="width:360px;display:flex;flex-direction:column;align-items:center;gap:1rem;border:2px solid var(--blue)"><div style="display:flex;align-items:center;gap:12px;width:100%"><div style="width:44px;height:44px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div><div style="font-size:14px;font-weight:700">Coach Name: <span style="font-weight:400">Change Password</span></div><div style="font-size:12px;color:var(--n600)">Current Version - 08/12/2022 duplicated</div></div></div><button class="btn btn-p" style="width:80px">Ok</button></div></div>
+      <div class="sec">Aigent coach card pop-up</div>
+      <div class="demo" style="gap:12px;align-items:flex-start;overflow-x:auto;padding-bottom:0.5rem">
+        <div class="coach-card">
+          <div class="coach-nav"><span>+</span><span class="brand">ai<span>gent</span></span><span>×</span></div>
+          <div class="coach-header info"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Account Balance Inquiry</div>
+          <div class="coach-body">It looks like the caller is inquiring about their Account Balance.</div>
+          <div class="coach-actions"><button class="coach-btn-bad">👎 Not Helpful</button><button class="coach-btn-good">👍 Helpful</button></div>
+        </div>
+        <div class="coach-card">
+          <div class="coach-nav"><span>+</span><span class="brand">ai<span>gent</span></span><span>×</span></div>
+          <div class="coach-header warn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Long Call Notice</div>
+          <div class="coach-body">This call is taking too long. If not resolved in 2 minutes, escalate to Senior Management for PACE review.</div>
+          <div class="coach-actions"><button class="coach-btn-bad">👎 Not Helpful</button><button class="coach-btn-good">👍 Helpful</button></div>
+        </div>
+        <div class="coach-card">
+          <div class="coach-nav"><span>+</span><span class="brand">ai<span>gent</span></span><span>×</span></div>
+          <div class="coach-header danger"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Regulatory Complaint Risk</div>
+          <div class="coach-body">It looks like this customer is at risk of complaining. Transfer immediately to a supervisor.</div>
+          <div class="coach-actions"><button class="coach-btn-bad">👎 Not Helpful</button><button class="coach-btn-good">👍 Helpful</button></div>
+        </div>
+      </div>
+      <div class="sec">Template selector</div>
+      <div style="max-width:400px">
+        <div class="tmpl-card"><div class="tmpl-title">Lorem Ipsum</div><div class="tmpl-body">Suspendisse sapien ligula, rutrum quis metus sit amet, pulvinar sollicitudin felis.</div><button class="tmpl-select">Select</button></div>
+        <div class="tmpl-card" style="border-color:var(--blue)"><div class="tmpl-title">Lorem Ipsum</div><div class="tmpl-body">Suspendisse sapien ligula, rutrum quis metus sit amet, pulvinar sollicitudin felis.</div><button class="tmpl-select">Select</button></div>
+        <div class="tmpl-card selected"><div class="tmpl-title">Lorem Ipsum</div><div class="tmpl-body">Suspendisse sapien ligula, rutrum quis metus sit amet, pulvinar sollicitudin felis.</div><button class="tmpl-select">Select</button></div>
+      </div>
+      <div class="sec">Dividers</div>
+      <div class="demo" style="flex-direction:column;align-items:flex-start;gap:1rem">
+        <div style="width:100%"><div style="font-size:11px;color:var(--n600);margin-bottom:6px">Horizontal divider</div><div class="divider-h"></div></div>
+        <div><div style="font-size:11px;color:var(--n600);margin-bottom:6px">Vertical divider</div><div class="divider-v"></div></div>
+        <div style="width:200px"><div style="font-size:11px;color:var(--n600);margin-bottom:6px">Underline accent (blue)</div><div class="underline-accent"></div></div>
+      </div>
+      <div class="sec">Pop-up nav bar</div>
+      <div class="demo">
+        <div style="background:var(--blue);border-radius:20px;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;width:280px">
+          <div style="width:28px;height:28px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:700;cursor:pointer">+</div>
+          <span style="color:white;font-size:15px;font-weight:700;letter-spacing:-0.5px">ai<span style="font-weight:400;font-style:italic">gent</span></span>
+          <div style="width:28px;height:28px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:700;cursor:pointer">×</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DATE PICKER -->
+    <div class="page" id="page-datepicker">
+      <div class="page-title">Date Picker</div>
+      <div class="page-desc">The date picker system includes a dual-month calendar panel, date button pills, date links, day selectors, and a full date picker container.</div>
+      <div class="sec">Dual calendar</div>
+      <div class="demo" style="gap:1rem;align-items:flex-start;flex-wrap:wrap">
+        <div class="cal">
+          <div class="cal-nav"><button>◀</button><span>September ▾ 2022 ▾</span><button>▶</button></div>
+          <div class="cal-grid">
+            <div class="cal-day-hdr">Mon</div><div class="cal-day-hdr">Tue</div><div class="cal-day-hdr">Wed</div><div class="cal-day-hdr">Thu</div><div class="cal-day-hdr">Fri</div><div class="cal-day-hdr">Sat</div><div class="cal-day-hdr">Sun</div>
+            <div class="cal-day other-month">29</div><div class="cal-day other-month">30</div><div class="cal-day other-month">31</div><div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div>
+            <div class="cal-day">5</div><div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day today">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div>
+            <div class="cal-day">12</div><div class="cal-day">13</div><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div>
+            <div class="cal-day">19</div><div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div>
+            <div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day other-month">1</div><div class="cal-day other-month">2</div>
+          </div>
+          <div class="cal-footer"><button class="cal-btn-outline">Greater than 90 days</button><button class="cal-btn-primary">Today</button></div>
+        </div>
+        <div class="cal">
+          <div class="cal-nav"><button>◀</button><span>June ▾ 2022 ▾</span><button>▶</button></div>
+          <div class="cal-grid">
+            <div class="cal-day-hdr">Mon</div><div class="cal-day-hdr">Tue</div><div class="cal-day-hdr">Wed</div><div class="cal-day-hdr">Thu</div><div class="cal-day-hdr">Fri</div><div class="cal-day-hdr">Sat</div><div class="cal-day-hdr">Sun</div>
+            <div class="cal-day other-month">30</div><div class="cal-day other-month">31</div><div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day">5</div>
+            <div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day today">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div>
+            <div class="cal-day">13</div><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day">19</div>
+            <div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day">26</div>
+            <div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day other-month">1</div><div class="cal-day other-month">2</div><div class="cal-day other-month">3</div>
+          </div>
+          <div class="cal-footer" style="flex-direction:column;gap:4px"><div style="display:flex;gap:6px"><button class="cal-btn-outline" style="flex:1">Greater than 90 days</button><button class="cal-btn-primary" style="flex:1">Today</button></div><a href="#" class="lnk" style="font-size:11px;text-align:center">Request transcriptions greater than 90 days</a></div>
+        </div>
+      </div>
+      <div class="sec">Date button pills</div>
+      <div class="demo" style="gap:6px">
+        <button class="date-pill">date</button>
+        <button class="date-pill">date</button>
+        <button class="date-pill active">date</button>
+      </div>
+      <div class="sec">Date link</div>
+      <div class="demo"><a href="#" class="lnk" style="font-size:12px">Request transcriptions greater than 90 days</a></div>
+      <div class="sec">Days selector</div>
+      <div class="demo" style="gap:4px">
+        <button class="date-pill" style="width:28px;padding:4px;text-align:center">1</button>
+        <button class="date-pill active" style="width:28px;padding:4px;text-align:center">1</button>
+        <button class="date-pill" style="width:28px;padding:4px;text-align:center;background:var(--blue);color:white;border-color:var(--blue)">1</button>
+      </div>
+    </div>
+
+    <!-- TRANSCRIPTION MENU -->
+    <div class="page" id="page-transcription">
+      <div class="page-title">Transcription Menu</div>
+      <div class="page-desc">A specialized panel for the call review interface. Surfaces call intelligence data in collapsible sections alongside the audio scrubber. Only instantiate in transcription views.</div>
+      <div class="sec">Expanded state</div>
+      <div class="demo" style="justify-content:center;padding:2rem 1rem">
+        <div style="position:relative">
+          <div class="tx-play">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="tx-menu">
+            <div class="tx-title">Transcription Menu</div>
+            <div class="tx-section">
+              <div class="tx-header"><span>Summary ▼</span></div>
+              <div class="tx-body">Customer called customer care. She asked for her full name and the name of her school.</div>
+            </div>
+            <div class="divider-h" style="margin:0.5rem 0"></div>
+            <div class="tx-section">
+              <div class="tx-header"><span>Keywords ▼</span></div>
+              <div class="tx-body" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+                <span class="kw-pill">lost</span><span class="kw-pill">forgotten</span><span class="kw-pill">angry</span><span class="kw-pill">quit</span><span class="kw-pill">switch</span>
+              </div>
+            </div>
+            <div class="divider-h" style="margin:0.5rem 0"></div>
+            <div class="tx-section">
+              <div class="tx-header"><span>Coaches Triggered ▼</span></div>
+              <div class="tx-body" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+                <span class="kw-pill">card is not working</span><span class="kw-pill">easy deposit</span>
+              </div>
+            </div>
+            <div class="divider-h" style="margin:0.5rem 0"></div>
+            <div class="tx-section">
+              <div class="tx-header"><span>Call Segments ▼</span></div>
+              <div class="tx-body" style="margin-top:6px">
+                <div style="color:var(--blue);font-size:12px;line-height:1.8">1. Segment 1 (09:43 – 10:00)<br>2. Segment 2 (10:04 – 13:10)<br>3. Segment 3 (13:20 – 14:01)<br>4. Segment 4 (14:30 – 16:12)</div>
+              </div>
+            </div>
+            <div class="divider-h" style="margin:0.5rem 0"></div>
+            <div class="tx-section">
+              <div class="tx-header"><span>Versions ▼</span></div>
+              <div class="tx-body" style="margin-top:6px">
+                <label class="chk" style="margin-bottom:6px"><input type="radio" name="ver"> Current Version - 08/12/2022</label>
+                <label class="chk" style="margin-bottom:8px"><input type="radio" name="ver"> Version 1 - 09/03/2022</label>
+                <button class="btn btn-s btn-sm" style="font-size:11px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg> Create New Version</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sec">Collapsed state</div>
+      <div class="demo" style="justify-content:center;padding:2rem 1rem">
+        <div style="position:relative">
+          <div class="tx-play" style="background:var(--n700)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5" stroke="white" stroke-width="2"/></svg>
+          </div>
+          <div class="tx-menu" style="min-width:220px">
+            <div class="tx-title">Transcription Menu</div>
+            <div class="tx-header" style="padding:8px 0;border-bottom:1px solid var(--n300)">Summary ▲</div>
+            <div class="tx-header" style="padding:8px 0;border-bottom:1px solid var(--n300)">Keywords ▲</div>
+            <div class="tx-header" style="padding:8px 0;border-bottom:1px solid var(--n300)">Coaches Triggered ▲</div>
+            <div class="tx-header" style="padding:8px 0;border-bottom:1px solid var(--n300)">Call Segments ▲</div>
+            <div class="tx-header" style="padding:8px 0">Versions ▲</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- DATA -->
     <div class="page" id="page-data">
       <div class="page-title">Data Display</div>
-      <div class="page-desc">Data components are central to Aigent's core product value — covering tables, loading states, audio playback, and specialized transcription views.</div>
+      <div class="page-desc">Data components cover tables, loading states, and the audio scrubber. These are central to Aigent's core product value.</div>
       <div class="sec">Table (v1.0)</div>
-      <div style="overflow:hidden;border-radius:var(--rl);border:1px solid var(--n300)"><table class="dtbl" style="width:100%"><thead><tr><th>Agent</th><th>Status</th><th>Call length</th><th>Score</th><th>View</th></tr></thead><tbody><tr><td>Agent 001</td><td><span class="badge b-s">Active</span></td><td>4m 12s</td><td>92</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2" style="cursor:pointer"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></td></tr><tr><td>Agent 002</td><td><span class="badge b-w">Paused</span></td><td>1m 30s</td><td>78</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2" style="cursor:pointer"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></td></tr><tr><td>Agent 003</td><td><span class="badge b-e">Offline</span></td><td>—</td><td>—</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#CBCBCB" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></td></tr></tbody></table></div>
+      <div style="overflow:hidden;border-radius:var(--rl);border:1px solid var(--n300)"><table class="dtbl" style="width:100%"><thead><tr><th>Agent</th><th>Status</th><th>Call length</th><th>Score</th><th>View</th></tr></thead><tbody>
+        <tr><td>Agent 001</td><td><span class="badge b-s">Active</span></td><td>4m 12s</td><td>92</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2" style="cursor:pointer"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></td></tr>
+        <tr><td>Agent 002</td><td><span class="badge b-w">Paused</span></td><td>1m 30s</td><td>78</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2" style="cursor:pointer"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></td></tr>
+        <tr><td>Agent 003</td><td><span class="badge b-e">Offline</span></td><td>—</td><td>—</td><td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#CBCBCB" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></td></tr>
+      </tbody></table></div>
       <div class="sec">Loading indicator</div>
       <div class="demo" style="justify-content:center;gap:2.5rem">
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spin"></div><span style="font-size:11px;color:var(--n600)">Frame 1</span></div>
@@ -512,15 +779,27 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spin" style="animation-delay:0.4s"></div><span style="font-size:11px;color:var(--n600)">Frame 3</span></div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div class="spin" style="animation-delay:0.6s"></div><span style="font-size:11px;color:var(--n600)">Frame 4</span></div>
       </div>
+      <div class="callout">Loading position property: top right, bottom right, bottom left, top left — indicating the arc position in the animation cycle.</div>
       <div class="sec">Audio scrubber</div>
-      <div class="demo"><div style="display:flex;align-items:center;gap:12px;width:100%"><span style="font-size:12px;color:var(--n600);font-family:var(--fm);min-width:36px">2:04</span><input type="range" min="0" max="100" value="38" style="flex:1;accent-color:var(--n900)"><span style="font-size:12px;color:var(--n600);font-family:var(--fm);min-width:36px">5:22</span></div></div>
-      <div class="callout">The Transcription Menu component is specialized for call review only. It surfaces Call Keywords, Call Segments, Versions, Trigger Data, and Call Summary. Only instantiate in transcription views.</div>
+      <div class="demo" style="padding:1.5rem">
+        <div style="display:flex;align-items:center;gap:10px;width:100%">
+          <span style="font-size:12px;color:var(--n600);font-family:var(--fm);min-width:36px">0:00</span>
+          <div class="audio-track" style="flex:1">
+            <div class="track-cap"></div>
+            <div class="track-line"></div>
+            <div class="track-thumb"></div>
+            <div class="track-line"></div>
+            <div class="track-cap"></div>
+          </div>
+          <span style="font-size:12px;color:var(--n600);font-family:var(--fm);min-width:36px">5:22</span>
+        </div>
+      </div>
     </div>
 
     <!-- TOKENS -->
     <div class="page" id="page-tokens">
       <div class="page-title">Modern token architecture</div>
-      <div class="page-desc">This system was built before design tokens were widely adopted. The section below maps existing decisions to a W3C-compliant two-tier token layer — showing what the system would look like if built today.</div>
+      <div class="page-desc">This system was built before design tokens were widely adopted. The section below maps existing decisions to a W3C-compliant two-tier token layer.</div>
       <div class="callout"><strong>Context.</strong> The original system uses hardcoded hex values and Figma styles. A token layer enables multi-brand theming, dark mode, and AI-assisted component generation from a single source of truth.</div>
       <div class="sec">Tier 1 — Primitive tokens</div>
       <table class="ttbl">
@@ -531,6 +810,7 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
           <tr><td><span class="tok">color.neutral.900</span></td><td><span class="cdot" style="background:#202944"></span>#202944</td><td>Color / Neutral</td></tr>
           <tr><td><span class="tok">color.success.500</span></td><td><span class="cdot" style="background:#06B95E"></span>#06B95E</td><td>Color / Semantic</td></tr>
           <tr><td><span class="tok">color.error.500</span></td><td><span class="cdot" style="background:#E10412"></span>#E10412</td><td>Color / Semantic</td></tr>
+          <tr><td><span class="tok">color.warning.500</span></td><td><span class="cdot" style="background:#FADC63"></span>#FADC63</td><td>Color / Semantic</td></tr>
           <tr><td><span class="tok">shadow.def</span></td><td style="font-family:var(--fm);font-size:11px">0 1px 3px rgba(0,0,0,0.12)</td><td>Elevation</td></tr>
           <tr><td><span class="tok">radius.md</span></td><td style="font-family:var(--fm);font-size:11px">8px</td><td>Border radius</td></tr>
           <tr><td><span class="tok">font.size.body</span></td><td style="font-family:var(--fm);font-size:11px">14px</td><td>Typography</td></tr>
@@ -553,7 +833,7 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
       </table>
       <div class="sec">AI tooling integration</div>
       <div class="comp-grid" style="margin-top:0.5rem">
-        <div class="comp-card" style="border-left:3px solid var(--blue)"><div class="comp-name">Token-to-component generation</div><div class="comp-desc">AI tools can generate spec-accurate components by referencing token names — reducing design–dev drift.</div></div>
+        <div class="comp-card" style="border-left:3px solid var(--blue)"><div class="comp-name">Token-to-component generation</div><div class="comp-desc">AI tools generate spec-accurate components by referencing token names — reducing design–dev drift.</div></div>
         <div class="comp-card" style="border-left:3px solid var(--sec)"><div class="comp-name">Multi-brand theming</div><div class="comp-desc">Swap Tier 1 primitives per brand while semantic tokens stay constant. Zero component changes needed.</div></div>
         <div class="comp-card" style="border-left:3px solid var(--ter)"><div class="comp-name">Automated dark mode</div><div class="comp-desc">Semantic tokens map to mode-specific values automatically — dark mode becomes a config, not a rebuild.</div></div>
         <div class="comp-card" style="border-left:3px solid #FADC63"><div class="comp-name">Figma Variables migration</div><div class="comp-desc">Maps directly to Figma Variables: primitive tokens become Variable collections, semantic tokens use aliasing.</div></div>
@@ -565,14 +845,13 @@ html,body{height:100%;font-family:var(--ff);color:var(--n900);background:#fff;li
 </div>
 
 <script>
-// Icons — fully inline SVG, no CDN dependency
 var icons=[
   {name:'Profile',svg:'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'},
   {name:'Log out',svg:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>'},
   {name:'Camera',svg:'<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>'},
   {name:'Help',svg:'<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>'},
   {name:'Change',svg:'<polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>'},
-  {name:'Phone',svg:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 10.82a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>'},
+  {name:'Phone',svg:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 10.82 19.79 19.79 0 0 1 1.75 2.15 2 2 0 0 1 3.77 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>'},
   {name:'Check',svg:'<polyline points="20 6 9 17 4 12"/>'},
   {name:'Password',svg:'<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'},
   {name:'Heartbeat',svg:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},
@@ -598,18 +877,14 @@ var icons=[
 ];
 var grid=document.getElementById('icon-grid');
 icons.forEach(function(ic){
-  var d=document.createElement('div');
-  d.className='icon-item';
+  var d=document.createElement('div');d.className='icon-item';
   d.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">'+ic.svg+'</svg><span class="icon-nm">'+ic.name+'</span>';
   grid.appendChild(d);
 });
-
-// Grid columns
 [['gd',12],['gt',6],['gm',4]].forEach(function(g){
   var el=document.getElementById(g[0]);
   if(el){for(var i=0;i<g[1];i++){var d=document.createElement('div');d.className='gc';el.appendChild(d);}}
 });
-
 function nav(id,el){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
   document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});
@@ -619,8 +894,7 @@ function nav(id,el){
 }
 function toggleDD(){
   var m=document.getElementById('ddm'),t=document.getElementById('ddt');
-  var o=m.classList.toggle('open');
-  t.classList.toggle('open',o);
+  var o=m.classList.toggle('open');t.classList.toggle('open',o);
 }
 function switchTab(el,id){
   el.parentElement.querySelectorAll('.tab').forEach(function(t){t.classList.remove('act')});
